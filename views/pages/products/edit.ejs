@@ -1,0 +1,53 @@
+<%- layout('layout/dashboard-template')%>
+<h1 class="mb-3">Add New Product</h1>
+<form class="reg-form p-3 border" action="/dashboard/products/<% product._id %>" method="POST">
+  <div class="mb-2">
+  <label for="name" class="form-label">Name</label>
+  <input type="text" class="form-control" name="product[name]" id="name" placeholder="name">
+  </div>
+
+  <div class="mb-2">
+  <label for="intensity" class="form-label">Intensity</label>
+  <input type="text" class="form-control" name="product[intensity]" id="intensity" placeholder="">
+  </div>
+
+  <div class="mb-2">
+  <label for="weight" class="form-label">Weight</label>
+  <input type="text" class="form-control" name="product[weight]" id="weight" placeholder="">
+  </div>
+
+  <div class="mb-2">
+  <label for="price" class="form-label">Item Cost</label>
+  <input type="number" class="form-control" name="product[itemCost]" id="price" placeholder="">
+  </div>
+
+  <div class="mb-2">
+  <label for="price" class="form-label">Selling Price</label>
+  <input type="number" class="form-control" name="product[sellingPrice]" id="price" placeholder="">
+  </div>
+
+  <div class="mb-2">
+  <label for="price" class="form-label">Current Stock</label>
+  <input type="number" class="form-control" name="product[currentStock]" id="price" placeholder="">
+  </div>
+
+  <div class="mb-2">
+      <label for="category" class="form-label">Category</label>
+      <select id="productCategory" class="form-select">
+        <% for (let category of categories) { %>
+        <option><%=category%></option>
+        <% } %>
+      </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="supplier" class="form-label">Supplier</label>
+        <select id="productSupplier" class="form-select">
+          <% for (let supplier of suppliers) { %>
+          <option><%=supplier.name%></option>
+          <% } %>
+        </select>
+      </div>
+
+  <button class="btn btn-primary btn-sm">Submit</button>
+</form>

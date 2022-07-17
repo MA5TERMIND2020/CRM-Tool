@@ -39,7 +39,8 @@ img {
 /* ------- Hompepage ---------------- */
 
 .main {
-  height: 90vh;
+  min-height: 90vh;
+  max-height: auto;
 }
 
 .padding {
@@ -65,7 +66,8 @@ img {
 }
 /* ------------- LOGIN PAGE -------------- */
 .height {
-  height: 85vh;
+  min-height: 85vh;
+  max-height: auto;
 }
 
 .login-inner{

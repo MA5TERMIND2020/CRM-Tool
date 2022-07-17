@@ -12,7 +12,11 @@ const productSchema = new Schema({
     type: String,
     required: true
   },
-  price: {
+  itemCost: {
+    type: Number,
+    required: true
+  },
+  sellingPrice: {
     type: Number,
     required: true
   },
@@ -20,6 +24,9 @@ const productSchema = new Schema({
     type: String,
     lowercase: true,
     enum: ['small', 'big', 'combo']
+  },
+  currentStock: {
+    type: Number,
   },
   supplier: {
     type: Schema.Types.ObjectID, // to display the owner of the products sold

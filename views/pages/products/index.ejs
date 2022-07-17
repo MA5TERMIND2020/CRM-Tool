@@ -22,7 +22,9 @@
         <th scope="col">Product Name</th>
         <th scope="col">Intensity</th>
         <th scope="col">Weight</th>
-        <th scope="col">Price</th>
+        <th scope="col">Item Cost</th>
+        <th scope="col">Selling Price</th>
+        <th scope="col">Current Stock</th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -38,7 +40,9 @@
         <td><%= product.name %></td>
         <td><%= product.intensity %></td>
         <td><%= product.weight %></td>
-        <td><%= product.price %></td>
+        <td><%= product.itemCost %></td>
+        <td><%= product.sellingPrice %></td>
+        <td><%= product.currentStock %></td>
         <td>
           <form class="" action="/dashboard/suppliers?_method=DELETE" method="post">
             <button class="btn btn-danger btn-sm">Delete</button>
@@ -56,10 +60,12 @@
       <tr>
         <th scope="row"><a class="btn btn-primary btn-sm" href="/dashboard/products/<%= product._id %>/edit">
             Edit</a></th>
-        <td><%= product.name %></td>
-        <td><%= product.intensity %></td>
-        <td><%= product.weight %></td>
-        <td><%= product.price %></td>
+            <td><%= product.name %></td>
+            <td><%= product.intensity %></td>
+            <td><%= product.weight %></td>
+            <td><%= product.itemCost %></td>
+            <td><%= product.sellingPrice %></td>
+            <td><%= product.currentStock %></td>
         <td>
           <form class="" action="/dashboard/suppliers?_method=DELETE" method="post">
             <button class="btn btn-danger btn-sm">Delete</button>
@@ -76,10 +82,12 @@
     <tr>
       <th scope="row"><a class="btn btn-primary btn-sm"
         href="/dashboard/products/<%= product._id %>/edit">Edit</a></th>
-      <td><%= product.name %></td>
-      <td><%= product.intensity %></td>
-      <td><%= product.weight %></td>
-      <td><%= product.price %></td>
+        <td><%= product.name %></td>
+        <td><%= product.intensity %></td>
+        <td><%= product.weight %></td>
+        <td><%= product.itemCost %></td>
+        <td><%= product.sellingPrice %></td>
+        <td><%= product.currentStock %></td>
       <td>
         <form class="" action="/dashboard/suppliers?_method=DELETE" method="post">
           <button class="btn btn-danger btn-sm">Delete</button>

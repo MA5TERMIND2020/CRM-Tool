@@ -17,24 +17,30 @@ mongoose.connect('mongodb://localhost:27017/crm', { useNewUrlParser: true })
       name: 'India Kaapi Royal',
       intensity: 'Dark Roasting',
       weight: '200g',
-      price: 5.9,
+      itemCost: 4.5,
+      sellingPrice: 5.9,
       category: 'small',
+      currentStock: 100,
       supplier: '62cd88d87e500d2ca3091323'
     },
     {
       name: 'Brasil Cerrado Diamond',
       intensity: 'Dark Roasting',
       weight: '1000g',
-      price: 29.5,
+      itemCost: 26.5,
+      sellingPrice: 29.5,
       category: 'big',
+      currentStock: 100,
       supplier: '62cd88d87e500d2ca3091323'
     },
     {
       name: 'Four Pack Blend',
       intensity: 'Light Roasting',
       weight: '4x100g',
-      price: 14.5,
+      itemCost: 12.5,
+      sellingPrice: 14.5,
       category: 'combo',
+      currentStock: 100,
       supplier: '62cd88d87e500d2ca3091323'
     }
   ]

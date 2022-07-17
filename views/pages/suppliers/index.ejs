@@ -1,28 +1,36 @@
 <%- layout('layout/dashboard-template')%>
-<div class="row">
-  <div class="col-6 offset-3">
-    <div class="card mb-3">
+<div class="">
+  <h1>Suppliers</h1>
 
-      <div class="card-body">
-        <h5 class="card-title"><%= supplier.name%></h5>
-      </div>
+     <div class="card mb-3">
+     <div class="">
+       <ul class="row list-unstyled">
+         <li class="col-1"></li>
+         <li class="col-3"><h5>Company Name</h5></li>
+         <li class="col-2"><h5>Phone Number</h5></li>
+         <li class="col-2"><h5>Email Address</h5></li>
+         <li class="col-3"><h5>Address</h5></li>
+         <li class="col-1"></li>
+       </ul>
+     </div>
 
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item text-muted"><%= supplier.tel %></li>
-        <li class="list-group-item text-muted"><%= supplier.email %></li>
-        <li class="list-group-item text-muted">$<%= supplier.address %>/nigh</li>
+    <div class="">
+
+
+        <% for (let supplier of suppliers) { %>
+          <ul class="row list-unstyled">
+          <li class="col-1"><a class="btn btn-primary btn-sm" href="/dashboard/suppliers/<%= supplier._id %>/edit">Edit</a></li>
+        <li class="col-3"><a href="/dashboard/suppliers/<%= supplier._id%>"><%= supplier.name %></a></li>
+        <li class="col-2"><%= supplier.tel %></li>
+        <li class="col-2"><%= supplier.email %></li>
+        <li class="col-3"><%= supplier.address %></li>
+        <li class="col-1"><form class="" action="/dashboard/suppliers?_method=DELETE" method="post">
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </form></li>
       </ul>
-
-      <div class="card-body">
-        <a class="card-link btn btn-info" href="/dashboard/suppliers/<%=supplier._id%>/edit">Edit</a>
-        <form class="d-inline" action="/dashboard/suppliers/<%=supplier._id%>?_method=DELETE" method="post">
-          <button class="card-link btn btn-danger">Delete</button>
-        </form>
-      </div>
-      <div class="card-footer text-muted">
-        <a href="/dashboard/suppliers">All Suppliers</a>
-      </div>
-
+      <% } %>
     </div>
-  </div>
-</div>
+
+   </div>
+
+<a class="btn btn-primary" href="/dashboard/suppliers/new">Add new</a>

@@ -6,7 +6,7 @@ const Supplier = require('../models/supplier');
 
 router.get('/', async (req, res) => {
   const suppliers = await Supplier.find({});
-  res.render('pages/suppliers/show', {suppliers});
+  res.render('pages/suppliers/index', {suppliers});
 })
 
 router.get('/new', (req, res) => {
@@ -16,7 +16,7 @@ router.get('/new', (req, res) => {
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const supplier = await Supplier.findById(id);
-  res.render('pages/suppliers/index', {supplier});
+  res.render('pages/suppliers/show', {supplier});
 } )
 
 // EDIT ROUTES
@@ -38,7 +38,7 @@ router.put('/:id', async(req, res) => {
 router.post('/', async(req, res) => {
   const supplier = new Supplier(req.body.supplier);
   await supplier.save();
-  res.redirect(`/dashboard/${supplier._id}`);
+  res.redirect('/dashboard/suppliers');
 })
 
 // // Delete route
