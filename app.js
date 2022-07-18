@@ -12,7 +12,7 @@ const productRoutes = require('./routes/products');
 const supplierRoutes = require('./routes/supplier');
 
 // mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
-mongoose.connect('mongodb://localhost:27017/crm', { useNewUrlParser: true })
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
   .then(() => {
     console.log("Mongo connection open!!!");
   })
@@ -44,6 +44,11 @@ app.use('/dashboard/suppliers', supplierRoutes);
 // show routes for REGULAR PAGES
 app.get('/', (req, res) => {
   res.render('main');
+});
+
+// show routes for Register
+app.get('/register', (req, res) => {
+  res.render('register')
 });
 
 app.get('/login', (req, res) => {
