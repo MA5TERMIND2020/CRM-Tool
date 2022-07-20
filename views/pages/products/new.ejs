@@ -33,18 +33,18 @@
 
   <div class="mb-2">
       <label for="category" class="form-label">Category</label>
-      <select id="productCategory" class="form-select">
+      <select id="category" class="form-select" name="product[category]">
         <% for (let category of categories) { %>
-        <option><%=category%></option>
+        <option value="<%=category%>"><%=category%></option>
         <% } %>
       </select>
     </div>
 
     <div class="mb-3">
         <label for="supplier" class="form-label">Supplier</label>
-        <select id="productSupplier" class="form-select">
-          <% for (let supplier of suppliers) { %>
-          <option><%=supplier.name%></option>
+        <select id="supplier" class="form-select">
+          <% for (let s of product.supplier) {%>
+          <option value="<%=supplier%>"><%=s.name%></option>
           <% } %>
         </select>
       </div>

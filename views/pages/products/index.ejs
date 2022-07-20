@@ -29,10 +29,10 @@
       </tr>
     </thead>
 
+    <% for (let product of products) { %>
+    <% if (product.category === 'big') { %>
     <!-------- BIG PACKS' PRODUCTS ---------------->
     <tbody class="table-primary collapse" id="big-pack">
-      <% for (let product of products) { %>
-      <% if (product.category === 'big') { %>
       <tr>
         <th scope="row"><a class="btn btn-primary btn-sm"
           href="/dashboard/products/<%= product._id %>/edit">
@@ -49,14 +49,11 @@
           </form>
         </td>
       </tr>
-      <% } else { break } %>
-      <% } %>
-    </tbody>
+        </tbody>
+      <% } else if (product.category === 'combo') { %>
 
     <!-------- COMBO PACKS' PRODUCTS ---------------->
     <tbody class="table-primary collapse" id="combo-pack">
-      <% for (let product of products) { %>
-      <% if (product.category === 'combo') { %>
       <tr>
         <th scope="row"><a class="btn btn-primary btn-sm" href="/dashboard/products/<%= product._id %>/edit">
             Edit</a></th>
@@ -72,13 +69,11 @@
           </form>
         </td>
       </tr>
-      <% } else { break } %>
-      <% } %>
-    </tbody>
+      </tbody>
+      <% } else { %>
+
 
   <tbody class="table-primary collapse" id="small-pack">
-    <% for (let product of products) { %>
-    <% if (product.category === 'small') { %>
     <tr>
       <th scope="row"><a class="btn btn-primary btn-sm"
         href="/dashboard/products/<%= product._id %>/edit">Edit</a></th>
@@ -94,11 +89,11 @@
         </form>
       </td>
     </tr>
-    <% } else { break } %>
     <% } %>
+        <% } %>
   </tbody>
 </table>
 
   <a class="btn btn-primary btn-sm"
-  href="/dashboard/products/new">Add new</a>
+  href="/dashboard/products/new">Purchase Product</a>
 </div>

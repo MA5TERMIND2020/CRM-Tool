@@ -5,15 +5,16 @@ const Supplier = require('../models/supplier');
 const Product = require('../models/products');
 const categories = ['small', 'big', 'combo']
 
+// show all products
 router.get('/', async (req, res) => {
   const products = await Product.find({});
-  console.log('showing products page');
   res.render('pages/products/index', {products, categories});
 })
 
 router.get('/new', async (req, res) => {
-  const suppliers = await Supplier.find({});
-  res.render('pages/products/new', {suppliers, categories});
+  const product = await Product.find({})
+  const supplier = await Product.find({}).populate('supplier');
+  res.render('pages/products/new', {product, supplier, categories});
 })
 
 router.get('/:id/edit', async (req, res) => {
@@ -22,10 +23,12 @@ router.get('/:id/edit', async (req, res) => {
   res.render('pages/products/edit', {product, categories});
 })
 
-router.post('/:id', async(req, res) => {
+// submit new
+router.post('/', async(req, res) => {
   const product = new Product(req.body.product);
   await product.save();
-  res.redirect(`/dashboard/products/${product._id}`, {product});
+  console.log('product');
+  res.render('pages/products/index', {products, categories});
 })
 
 module.exports = router;
