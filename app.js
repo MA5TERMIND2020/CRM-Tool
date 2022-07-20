@@ -10,6 +10,7 @@ const methodOverride = require('method-override'); //to be able to use app.put
 // require routes USER, PRODUCT, CUSTOMER, SUPPLIER
 const productRoutes = require('./routes/products');
 const supplierRoutes = require('./routes/supplier');
+const customerRoutes = require('./routes/customer')
 
 // mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
 mongoose.connect('mongodb://localhost:27017/crm', { useNewUrlParser: true })
@@ -40,6 +41,7 @@ app.use(methodOverride('_method'));
 // To use the exported routes
 app.use('/dashboard/products', productRoutes);
 app.use('/dashboard/suppliers', supplierRoutes);
+app.use('/dashboard/customers', customerRoutes);
 
 // show routes for REGULAR PAGES
 app.get('/', (req, res) => {

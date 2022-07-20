@@ -1,0 +1,40 @@
+<%- layout('layout/dashboard-template')%>
+<div class="">
+  <h1>Customers</h1>
+
+  <table class="table">
+    <thead class="table-light">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email Address</th>
+        <th scope="col">Address</th>
+        <th scope="col"></th>
+        </tr>
+      </thead>
+
+    <tbody class="table-primary">
+        <% for (let c of customers) { %>
+      <tr>
+        <th scope="row"><a class="btn btn-primary btn-sm"
+              href="/dashboard/products/<%= product._id %>/edit">
+                Edit</a></th>
+        <td><%= customer.name %></td>
+        <td><%= customer.number %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.address %></td>
+        <td>
+          <form class="" action="/dashboard/suppliers?_method=DELETE" method="post">
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% } else { break } %>
+      <% } %>
+    </tbody>
+</table>
+
+    <a class="btn btn-primary btn-sm"
+    href="/dashboard/products/new">Add new</a>
+  </div>
