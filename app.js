@@ -6,8 +6,17 @@ const ejs = require('ejs');
 const ejsMate = require('ejs-mate');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override'); //to be able to use app.put
+const bcrypt = require('bcrypt');
+
+//I need a router!!!
+const router = express.Router();
+app.use("/", router);
+
+//import models
+var user = require('./models/user.js');
 
 // require routes USER, PRODUCT, CUSTOMER, SUPPLIER
+
 const productRoutes = require('./routes/products');
 const supplierRoutes = require('./routes/supplier');
 
@@ -40,6 +49,23 @@ app.use(methodOverride('_method'));
 // To use the exported routes
 app.use('/dashboard/products', productRoutes);
 app.use('/dashboard/suppliers', supplierRoutes);
+
+// Register New Users
+app.post('/register', async (req, res) => {
+  try {
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const userData = {
+      name: req.body.name,
+      email: req.body.email,
+      password: hashedPassword
+    }
+    await userData.save();
+    res.redirect('/login')
+  } catch {
+    res.redirect('/')
+  }
+
+})
 
 // show routes for REGULAR PAGES
 app.get('/', (req, res) => {
