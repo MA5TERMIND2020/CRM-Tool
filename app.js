@@ -20,7 +20,7 @@ var user = require('./models/user.js');
 const productRoutes = require('./routes/products');
 const supplierRoutes = require('./routes/supplier');
 
-// mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+// mongoose.connect('mongodb://localhost:27017/crm', { useNewUrlParser: true })
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
   .then(() => {
     console.log("Mongo connection open!!!");
@@ -60,18 +60,22 @@ app.post('/register', async (req, res) => {
       password: hashedPassword
     }
     await user.save();
-    res.redirect('/login')
+    res.redirect('/accounts')
   } catch {
     res.redirect('/');
-    console.log(err)
   }
 
-})
+});
 
 // show routes for REGULAR PAGES
 app.get('/', (req, res) => {
   res.render('main');
 });
+
+app.get('/account', async (req, res) => {
+  const users = Users.find({});
+  res.render('account', {users});
+})
 
 // show routes for Register
 app.get('/register', (req, res) => {
