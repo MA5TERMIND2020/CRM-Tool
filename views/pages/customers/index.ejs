@@ -1,8 +1,8 @@
 <%- layout('layout/dashboard-template')%>
 <div class="">
-  <h1>Customers</h1>
+  <h1 class="mb-5">Customers</h1>
 
-  <table class="table">
+  <table class="table mb-5">
     <thead class="table-light">
       <tr>
         <th scope="col"></th>
@@ -15,26 +15,25 @@
       </thead>
 
     <tbody class="table-primary">
-        <% for (let c of customers) { %>
+        <% for (let customer of customers) { %>
       <tr>
         <th scope="row"><a class="btn btn-primary btn-sm"
-              href="/dashboard/products/<%= product._id %>/edit">
+              href="/dashboard/customers/<%= customer._id %>/edit">
                 Edit</a></th>
         <td><%= customer.name %></td>
-        <td><%= customer.number %></td>
+        <td><%= customer.tel %></td>
         <td><%= customer.email %></td>
         <td><%= customer.address %></td>
         <td>
-          <form class="" action="/dashboard/suppliers?_method=DELETE" method="post">
+          <form class="" action="/dashboard/customers?_method=DELETE" method="post">
             <button class="btn btn-danger btn-sm">Delete</button>
           </form>
         </td>
       </tr>
-      <% } else { break } %>
       <% } %>
     </tbody>
 </table>
 
     <a class="btn btn-primary btn-sm"
-    href="/dashboard/products/new">Add new</a>
+    href="/dashboard/customers/new">Add new</a>
   </div>

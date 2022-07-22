@@ -5,7 +5,7 @@ const router = express.Router();
 const Customer = require('../models/customer');
 
 router.get('/', async (req, res) => {
-  const customers = await User.find({});
+  const customers = await Customer.find({});
   res.render('pages/customers/index', {customers});
 })
 
@@ -14,7 +14,7 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/', async(req, res) => {
-  const customer = new Customer(req.body.supplier);
+  const customer = new Customer(req.body.customer);
   await customer.save();
   res.redirect('/dashboard/customers');
 })
