@@ -59,10 +59,11 @@ app.post('/register', async (req, res) => {
       email: req.body.email,
       password: hashedPassword
     }
-    await userData.save();
+    await user.save();
     res.redirect('/login')
   } catch {
-    res.redirect('/')
+    res.redirect('/');
+    console.log(err)
   }
 
 })
