@@ -24,9 +24,10 @@
         <td><%= supplier.tel %></td>
         <td><%= supplier.email %></td>
         <td><%= supplier.address %></td>
-        <td><form class="" action="/dashboard/suppliers?_method=DELETE" method="post">
-          <button class="btn btn-danger btn-sm">Delete</button>
-        </form></td>
+        <td>
+          <button class="btn btn-danger btn-sm deleteBtn"
+          data-id="<%= supplier._id %>">Delete</button>
+        </td>
       </tr>
       <% } %>
     </tbody>
