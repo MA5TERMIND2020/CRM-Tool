@@ -1,4 +1,14 @@
 <%- layout('layout/dashboard-template')%>
+<div class="">
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="/dashboard/suppliers">Suppliers</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+  </ol>
+</nav>
+</div>
+<div class="">
 <h1 class="mb-3">Edit Supplier</h1>
 <form class="reg-form p-3 border" action="/dashboard/suppliers/<%=supplier._id %>?_method=PUT" method="POST">
   <div class="mb-2">
@@ -23,3 +33,4 @@
 
   <button class="btn btn-primary btn-sm">Submit</button>
 </form>
+</div>

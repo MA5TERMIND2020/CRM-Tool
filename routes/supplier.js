@@ -1,8 +1,10 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const router = express.Router();
 const methodOverride = require('method-override');
 
 router.use(methodOverride('_method'))
+router.use(bodyParser.urlencoded({ extended: false }));
 
 // require model database
 const Supplier = require('../models/supplier');
@@ -44,7 +46,16 @@ router.post('/', async(req, res) => {
   res.redirect('/dashboard/suppliers');
 })
 
-// Delete route
+// delete from index
+router.delete('/:id', async (req,res) => {
+  const { id } = req.params;
+  const suppliers = await Supplier.find({});
+  const deleted = await Supplier.findByIdAndDelete(id);
+  console.log(`deleted ${deleted}`);
+  res.redirect('/dashboard/suppliers');
+});
+
+// Delete route from show individual item route
 router.delete('/:id', async(req, res) => {
   const { id } = req.params;
   await Supplier.findByIdAndDelete(id);
