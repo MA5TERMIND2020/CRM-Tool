@@ -18,8 +18,8 @@ router.get('/new', async (req, res) => {
 })
 
 router.get('/:id/edit', async (req, res) => {
-  const { id } = req.body;
-  const product = await Product.findById(id);
+  const { id } = req.params;
+  const product = await Product.findById(id).populate('supplier');
   res.render('pages/products/edit', {product, categories});
 })
 

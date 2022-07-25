@@ -1,4 +1,16 @@
 <%- layout('layout/dashboard-template')%>
+<!-- BREADCRUMBS -->
+<div class="">
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="/dashboard/products">Products</a></li>
+    <li class="breadcrumb-item active" aria-current="page">New</li>
+  </ol>
+</nav>
+</div>
+
+<div class="">
 <h1 class="mb-3">Add New Product</h1>
 <form class="reg-form p-3 border mb-3" action="/dashboard/products" method="POST">
   <div class="mb-2">
@@ -51,3 +63,4 @@
 
   <button class="btn btn-primary btn-sm">Submit</button>
 </form>
+</div>

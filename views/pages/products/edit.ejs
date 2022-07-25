@@ -1,53 +1,70 @@
 <%- layout('layout/dashboard-template')%>
+<!-- BREADCRUMBS -->
+<div class="">
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="/dashboard/products">Products</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+  </ol>
+</nav>
+</div>
+
+<div class="">
 <h1 class="mb-3">Add New Product</h1>
-<form class="reg-form p-3 border" action="/dashboard/products/<% product._id %>" method="POST">
+<form class="reg-form p-3 border" action="/dashboard/products/<% product._id %>?_method=PUT" method="POST">
   <div class="mb-2">
   <label for="name" class="form-label">Name</label>
-  <input type="text" class="form-control" name="product[name]" id="name" placeholder="name">
+  <input type="text" class="form-control" name="product[name]" id="name"
+  value="<%=product.name%>"placeholder="name">
   </div>
 
   <div class="mb-2">
   <label for="intensity" class="form-label">Intensity</label>
-  <input type="text" class="form-control" name="product[intensity]" id="intensity" placeholder="">
+  <input type="text" class="form-control" name="product[intensity]" id="intensity"
+  value="<%=product.intensity%>">
   </div>
 
   <div class="mb-2">
   <label for="weight" class="form-label">Weight</label>
-  <input type="text" class="form-control" name="product[weight]" id="weight" placeholder="">
+  <input type="text" class="form-control" name="product[weight]" id="weight"
+  value="<%=product.weight%>">
   </div>
 
   <div class="mb-2">
   <label for="price" class="form-label">Item Cost</label>
-  <input type="number" class="form-control" name="product[itemCost]" id="price" placeholder="">
+  <input type="number" class="form-control" name="product[itemCost]" id="price"
+  value="<%=product.itemCost %>">
   </div>
 
   <div class="mb-2">
   <label for="price" class="form-label">Selling Price</label>
-  <input type="number" class="form-control" name="product[sellingPrice]" id="price" placeholder="">
+  <input type="number" class="form-control" name="product[sellingPrice]" id="price"
+  value="<%=product.sellingPrice%>">
   </div>
 
   <div class="mb-2">
   <label for="price" class="form-label">Current Stock</label>
-  <input type="number" class="form-control" name="product[currentStock]" id="price" placeholder="">
+  <input type="number" class="form-control" name="product[currentStock]" id="price"
+  value="<%=product.currentStock%>">
   </div>
 
   <div class="mb-2">
       <label for="category" class="form-label">Category</label>
-      <select id="productCategory" class="form-select">
+      <select id="productCategory" class="form-select value="<%=product.category%>">
         <% for (let category of categories) { %>
         <option><%=category%></option>
         <% } %>
       </select>
     </div>
 
-    <div class="mb-3">
-        <label for="supplier" class="form-label">Supplier</label>
-        <select id="productSupplier" class="form-select">
-          <% for (let supplier of suppliers) { %>
-          <option><%=supplier.name%></option>
-          <% } %>
-        </select>
-      </div>
+    <div class="mb-2">
+    <label for="price" class="form-label">Supplier</label>
+    <input type="number" class="form-control" name="product[supplier]" id="price"
+    value="<%=product.supplier%>"
+    placeholder="<%=product.supplier%>">
+    </div>
 
   <button class="btn btn-primary btn-sm">Submit</button>
 </form>
+</div>
