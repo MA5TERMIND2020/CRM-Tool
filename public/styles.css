@@ -9,40 +9,41 @@
 
 /*********************************************** Utility Components  *************************************************/
 :root {
-
   /* Colors */
-    --color-primary: #284b63;
-    --color-secondary: #38a3a5;
-    --color-secondary-d: #3c6e71;
-    --color-body: #d9d9d9;
-    --color-font: #353535;
+  --color-primary: #284b63;
+  --color-secondary: #38a3a5;
+  --color-secondary-d: #3c6e71;
+  --color-body: #d9d9d9;
+  --color-font: #353535;
 
   /* box shadow */
-    --box-shadow: 3px 3px 10px 3px grey;
-    --box-shadow-small: 1px 1px 5px 1px grey;
+  --box-shadow: 3px 3px 10px 3px grey;
+  --box-shadow-small: 1px 1px 5px 1px grey;
 }
 
 body {
   background-color: var(--color-body);
+  background-image: url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: var(--color-font);
-  font-size: .9rem;
+  font-size: 0.9rem;
+}
+/* BEAUTIFY THE main page NAV */
+
+.nav-item {
+  margin: 0 1rem;
 }
 
 i {
   font-size: 1.2rem;
 }
 
-img {
-  width: 100%;
-}
-
 /* ------- Hompepage ---------------- */
-
 .main {
-  min-height: 90vh;
-  max-height: auto;
+  height: 90vh;
 }
-
 .padding {
   padding: 1rem 3rem;
 }
@@ -51,26 +52,44 @@ img {
   background-color: var(--color-primary);
   color: white;
 }
+/* features */
 
-.services-item {
-  background-color: var(--color-secondary-d);
-  border-radius: 10px;
-  width: 20rem;
-  height: 24rem;
-  color: white;
+#features {
+  margin-top: 20rem;
+}
+.feature-box {
+  text-align: center;
+  padding: 3%;
 }
 
-.services-item i {
-  font-size: 5rem;
-  color: var(--color-body);
+.card {
+  background-color: #38a3a5;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 2rem;
+  box-shadow: var(--box-shadow-small);
+  margin: 0 50px;
 }
+.icon {
+  margin: 1rem 0;
+  color: var(--color-primary);
+}
+.icon:hover {
+  color: #0c0d0d;
+}
+
+.feature-box-p {
+  padding: 5%;
+}
+
 /* ------------- LOGIN PAGE -------------- */
 .height {
-  min-height: 85vh;
-  max-height: auto;
+  height: 85vh;
 }
 
-.login-inner{
+.login-inner {
   width: 35%;
   min-width: 300px;
   height: min-content;
@@ -82,21 +101,20 @@ img {
 
 /* --------------- DASHBOARD PAGE ------------ */
 
-.nav-item i {
-  color: white;
-}
-
 .img-container {
   width: 8rem;
   height: 8rem;
+  margin: 3rem 0 1rem;
 }
-
-#sidebarMenu {
-  background-color: #d9dcd6;
+.hi-user{
+  margin-top: 100px;
+}
+#sidebarMenu { background-color: #d9dcd6;
 }
 
 #sidebarMenu li {
   line-height: 2rem;
+  
 }
 
 #sidebarMenu i {
@@ -112,24 +130,15 @@ img {
   vertical-align: text-bottom;
 }
 
-.dashboard-main {
-  background-color: white;
-  right: 0;
-}
-.left {
-  width: 25%;
-}
-
-.right {
-  width: 73%;
-  height: auto;
+.stocks-box {
+  text-align: center;
 }
 
 .box-item {
   background-color: #fcfcfc;
   box-shadow: var(--box-shadow-small);
   border-radius: 3px;
-  height: 150px;
+  margin-right: 1rem;
 }
 
 /* --------------- PRODUCTS PAGE ---------------*/
@@ -148,10 +157,22 @@ img {
   border-radius: 10px;
 }
 /* --------------- FOOTER --------------------- */
-.footer {
-  height: 10rem;
+.copyrights {
+  text-align: center;
+  color: #d9dcd6;
+  padding-top: 1rem;
 }
 
 .footer i {
   font-size: 2.5rem;
+}
+
+.footer-icon {
+  margin: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background-color: #284b63;
+  margin-top: 30rem;
 }
