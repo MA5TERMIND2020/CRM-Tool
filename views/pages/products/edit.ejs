@@ -9,14 +9,14 @@
   </ol>
 </nav>
 </div>
-
+<!-- MAIN -->
 <div class="">
-<h1 class="mb-3">Add New Product</h1>
+<h1 class="mb-3">Edit a Product</h1>
 <form class="reg-form p-3 border" action="/dashboard/products/<% product._id %>?_method=PUT" method="POST">
   <div class="mb-2">
   <label for="name" class="form-label">Name</label>
   <input type="text" class="form-control" name="product[name]" id="name"
-  value="<%=product.name%>"placeholder="name">
+  value="<%=product.name%>" placeholder="Name">
   </div>
 
   <div class="mb-2">

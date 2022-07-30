@@ -1,10 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const router = express.Router();
-const methodOverride = require('method-override');
-
-router.use(methodOverride('_method'))
-router.use(bodyParser.urlencoded({ extended: false }));
 
 // require model database
 const Supplier = require('../models/supplier');

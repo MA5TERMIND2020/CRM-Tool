@@ -35,7 +35,7 @@
         <td><%= customer.email %></td>
         <td><%= customer.address %></td>
         <td>
-          <form class="" action="/dashboard/customers?_method=DELETE" method="post">
+          <form class="" action="/dashboard/customers/<%= customer._id %>?_method=DELETE" method="post">
             <button class="btn btn-danger btn-sm">Delete</button>
           </form>
         </td>
