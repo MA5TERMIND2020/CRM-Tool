@@ -41,9 +41,7 @@ i {
 }
 
 /* ------- Hompepage ---------------- */
-.main {
-  height: 90vh;
-}
+
 .padding {
   padding: 1rem 3rem;
 }
@@ -56,10 +54,7 @@ i {
 
 #features {
   margin-top: 20rem;
-}
-.feature-box {
-  text-align: center;
-  padding: 3%;
+  padding: 7% 15%;
 }
 
 .card {
@@ -70,13 +65,16 @@ i {
   font-size: 16px;
   border-radius: 2rem;
   box-shadow: var(--box-shadow-small);
-  margin: 0 50px;
+  margin: 0 0 2rem;
+  width: 20rem;
+  height: 20rem;
+  
 }
-.icon {
+.card-icon {
   margin: 1rem 0;
   color: var(--color-primary);
 }
-.icon:hover {
+.card-icon:hover {
   color: #0c0d0d;
 }
 
