@@ -23,7 +23,7 @@
     <title>CRM Genie</title>
   </head>
 
-  <body>
+  <body class="background">
     <!--**********  NAVBAR SECTION ***********-->
     <nav class="navbar navbar-expand-lg primary-color navbar-dark fixed-top">
       <div class="container-fluid">
@@ -66,7 +66,7 @@
       <div class="row mb-3">
         <div class="text-center col-lg-4">
           <!-- First card -->
-          <div class="card">
+          <div class="card card-extra">
             <i class="card-icon fa-solid fa-square-phone fa-5x"></i>
             <p class="feature-box-p">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -78,7 +78,7 @@
         <!-- data, second card -->
 
         <div class="text-center col-lg-4">
-          <div class="card">
+          <div class="card card-extra">
             <i class="card-icon fa-solid fa-chart-line fa-5x"></i>
             <p class="feature-box-p">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -90,7 +90,7 @@
         <!-- profit, Third card -->
 
         <div class="text-center col-lg-4">
-          <div class="card">
+          <div class="card card-extra">
             <i class="card-icon fa-solid fa-coins fa-5x"></i>
             <p class="feature-box-p">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -102,7 +102,23 @@
     </section>
 
     <!--**********  FOOTER SECTION *********  -->
-    <%- include('partials/footer') %>
+    <footer>
+          <p class="copyrights">All Rights Reserved. Powered by &copy; TeamGold</p>
+        <div class="d-flex justify-content-center align-items-center">
+          <a href="#" class="px-3">
+            <i class="footer-icon fab fa-facebook-f fa-2x"></i>
+          </a>
+          <a href="#" class="px-3">
+            <i class="footer-icon fab fa-twitter fa-2x"></i>
+          </a>
+          <a href="#" class="px-3">
+            <i class="footer-icon fab fa-linkedin-in fa-2x"></i>
+          </a>
+          <a href="#" class="px-3">
+            <i class="footer-icon fab fa-instagram fa-2x"></i>
+          </a>
+        </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

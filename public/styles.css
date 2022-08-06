@@ -22,13 +22,16 @@
 }
 
 body {
+  color: var(--color-font);
+  font-size: 0.9rem;
+}
+
+.background {
   background-color: var(--color-body);
   background-image: url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color: var(--color-font);
-  font-size: 0.9rem;
 }
 /* BEAUTIFY THE main page NAV */
 
@@ -50,6 +53,11 @@ i {
   background-color: var(--color-primary);
   color: white;
 }
+
+.secondary-color {
+  background-color: var(--color-secondary-d);
+  color: white;
+}
 /* features */
 
 #features {
@@ -57,7 +65,7 @@ i {
   padding: 7% 15%;
 }
 
-.card {
+.card-extra {
   background-color: #38a3a5;
   justify-content: center;
   text-align: center;
@@ -68,8 +76,8 @@ i {
   margin: 0 0 2rem;
   width: 20rem;
   height: 20rem;
-  
 }
+
 .card-icon {
   margin: 1rem 0;
   color: var(--color-primary);

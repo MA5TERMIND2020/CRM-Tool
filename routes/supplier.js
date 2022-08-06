@@ -9,6 +9,12 @@ router.get('/', async (req, res) => {
   res.render('pages/suppliers/index', {suppliers});
 })
 
+router.get('/testing', async(req, res) => {
+  const supplierName= await Supplier.find({}, {"name":1});
+  console.log(supplierName);
+  res.render('pages/suppliers/testing', {supplierName});
+})
+
 router.get('/new', (req, res) => {
   res.render('pages/suppliers/new');
 })
