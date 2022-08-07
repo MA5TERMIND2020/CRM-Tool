@@ -39,9 +39,14 @@
 <section class="container-fluid height d-flex justify-content-center align-items-center">
 <div class="login-inner py-3 px-4">
   <h1 class="text-center mb-3">Login Here</h1>
-  <div id="errors"><% if (typeof error =='object' && error) { %><%= error %>  
-<% } %></div>
-  <form action="/users/login" method="POST" novalidate>
+  
+  
+  <div class="errors"><% if (error) { %>
+    <h4 class="errors">Invalid Credentials</h4>
+<% } %>
+  
+
+<form action="/users/login" method="POST" novalidate>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input type="email" class="form-control" name="user[email]" id="exampleInputEmail1" aria-describedby="emailHelp">
