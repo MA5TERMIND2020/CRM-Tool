@@ -88,14 +88,14 @@
     <tr>
       <th scope="row"><a class="btn btn-primary btn-sm"
         href="/dashboard/products/<%= product._id %>/edit">Edit</a></th>
-        <td><%= product.name %></td>
+        <td><a href="/dashboard/products/<%= product._id%>"><%= product.name %></a></td>
         <td><%= product.intensity %></td>
         <td><%= product.weight %></td>
         <td><%= product.itemCost %></td>
         <td><%= product.sellingPrice %></td>
         <td><%= product.currentStock %></td>
       <td>
-        <form class="" action="/dashboard/suppliers?_method=DELETE" method="post">
+        <form class="" action="/dashboard/products/<%= product._id %>?_method=DELETE" method="post">
           <button class="btn btn-danger btn-sm">Delete</button>
         </form>
       </td>
