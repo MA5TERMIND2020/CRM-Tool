@@ -19,7 +19,7 @@ router.get('/new', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  const product = await Product.findById(id);
+  const product = await Product.findById(id).populate('supplier');
   res.render('pages/products/show', {product});
 })
 
@@ -33,6 +33,7 @@ router.get('/:id/edit', async (req, res) => {
 router.put('/:id', async(req, res) => {
   const { id } = req.params;
   const updatedProduct = await Product.findByIdAndUpdate(id, { ...req.body.product })
+  const supplier = await Supplier.findOneAndUpdate({ '_id': updatedProduct.supplier }, { $push: { products: updatedProduct._id } });
   console.log(req.body);
   res.redirect('/dashboard/products');
 })

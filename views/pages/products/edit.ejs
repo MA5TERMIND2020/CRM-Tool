@@ -33,25 +33,26 @@
 
   <div class="mb-2">
   <label for="price" class="form-label">Item Cost</label>
-  <input type="number" class="form-control" name="product[itemCost]" id="price"
+  <input type="number" class="form-control" name="product[itemCost]" id="itemCost"
   value="<%=product.itemCost %>">
   </div>
 
   <div class="mb-2">
   <label for="price" class="form-label">Selling Price</label>
-  <input type="number" class="form-control" name="product[sellingPrice]" id="price"
+  <input type="number" class="form-control" name="product[sellingPrice]" id="sellingPrice"
   value="<%=product.sellingPrice%>">
   </div>
 
   <div class="mb-2">
   <label for="price" class="form-label">Current Stock</label>
-  <input type="number" class="form-control" name="product[currentStock]" id="price"
+  <input type="number" class="form-control" name="product[currentStock]" id="currentStock"
   value="<%=product.currentStock%>">
   </div>
 
   <div class="mb-2">
       <label for="category" class="form-label">Category</label>
-      <select id="productCategory" class="form-select" value="<%=product.category%>">
+      <select id="productCategory" class="form-select" name="product[category]"
+      id="category" value="<%=product.category%>">
         <% for (let category of categories) { %>
         <option><%=category%></option>
         <% } %>
@@ -60,9 +61,10 @@
 
     <div class="mb-5">
     <label for="price" class="form-label">Supplier</label>
-    <select id="productSupplier" class="form-select" value="<%=product.supplier%>">
+    <select id="productSupplier" class="form-select"
+    name="product[supplier]" id="supplier">
       <% for (let supplier of supplierNames) { %>
-      <option><%= supplier._id %></option>
+      <option value="<%=supplier._id%>"><%= supplier.name %></option>
       <% } %>
     </select>
     </div>
