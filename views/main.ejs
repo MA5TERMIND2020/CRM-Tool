@@ -26,7 +26,7 @@
     <title>CRM Genie</title>
   </head>
 
-  <body>
+  <body class="background">
     <!--**********  NAVBAR SECTION ***********-->
     <nav class="navbar navbar-expand-lg primary-color navbar-dark fixed-top">
       <div class="container-fluid">
@@ -51,6 +51,9 @@
               <a class="nav-link" href="/login">Login/Subscribe</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/register">Sign-Up</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#">About Us</a>
             </li>
             <li class="nav-item">
@@ -66,7 +69,7 @@
       <div class="row mb-3">
         <div class="text-center col-lg-4">
           <!-- First card -->
-          <div class="card">
+          <div class="card card-extra">
             <i class="card-icon fa-solid fa-square-phone fa-5x"></i>
             <p class="feature-box-p">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -78,7 +81,7 @@
         <!-- data, second card -->
 
         <div class="text-center col-lg-4">
-          <div class="card">
+          <div class="card card-extra">
             <i class="card-icon fa-solid fa-chart-line fa-5x"></i>
             <p class="feature-box-p">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -90,7 +93,7 @@
         <!-- profit, Third card -->
 
         <div class="text-center col-lg-4">
-          <div class="card">
+          <div class="card card-extra">
             <i class="card-icon fa-solid fa-coins fa-5x"></i>
             <p class="feature-box-p">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -103,7 +106,6 @@
 
     <!--**********  FOOTER SECTION *********  -->
     <%- include('partials/footer') %>
-    <!-- bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
