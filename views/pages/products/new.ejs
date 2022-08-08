@@ -15,37 +15,37 @@
 <form class="reg-form p-3 border mb-3" action="/dashboard/products" method="POST">
   <div class="mb-2">
   <label for="name" class="form-label">Name</label>
-  <input type="text" class="form-control" name="product[name]" id="name" placeholder="name">
+  <input type="text" class="form-control" name="name" id="name" placeholder="name">
   </div>
 
   <div class="mb-2">
   <label for="intensity" class="form-label">Intensity</label>
-  <input type="text" class="form-control" name="product[intensity]" id="intensity" placeholder="">
+  <input type="text" class="form-control" name="intensity" id="intensity" placeholder="">
   </div>
 
   <div class="mb-2">
   <label for="weight" class="form-label">Weight</label>
-  <input type="text" class="form-control" name="product[weight]" id="weight" placeholder="">
+  <input type="text" class="form-control" name="weight" id="weight" placeholder="">
   </div>
 
   <div class="mb-2">
   <label for="price" class="form-label">Item Cost</label>
-  <input type="number" class="form-control" name="product[itemCost]" id="itemCost" placeholder="">
+  <input type="number" class="form-control" name="itemCost" id="itemCost" placeholder="">
   </div>
 
   <div class="mb-2">
   <label for="price" class="form-label">Selling Price</label>
-  <input type="number" class="form-control" name="product[sellingPrice]" id="sellingPrice" placeholder="">
+  <input type="number" class="form-control" name="sellingPrice" id="sellingPrice" placeholder="">
   </div>
 
   <div class="mb-2">
   <label for="price" class="form-label">Current Stock</label>
-  <input type="number" class="form-control" name="product[currentStock]" id="currentStock" placeholder="">
+  <input type="number" class="form-control" name="currentStock" id="currentStock" placeholder="">
   </div>
 
   <div class="mb-2">
       <label for="category" class="form-label">Category</label>
-      <select id="category" class="form-select" name="product[category]">
+      <select id="category" class="form-select" name="category">
         <% for (let category of categories) { %>
         <option value="<%=category%>"><%=category%></option>
         <% } %>
@@ -54,9 +54,9 @@
 
     <div class="mb-3">
         <label for="supplier" class="form-label">Supplier</label>
-        <select id="supplier" class="form-select" name="product[supplier]">
+        <select id="supplier" class="form-select" name="supplier">
           <% for (let supplier of suppliers) {%>
-          <option value="<%=supplier%>"><%=supplier.name%></option>
+          <option value="<%=supplier._id%>"><%=supplier.name%></option>
           <% } %>
         </select>
       </div>

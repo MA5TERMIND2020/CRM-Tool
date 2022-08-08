@@ -38,13 +38,11 @@ router.put('/:id', async(req, res) => {
 })
 
 router.post('/', async(req, res) => {
-const { supplier } = req.body;
-const supplierID = supplier._id;
-// const newProduct = new Product(req.body.product);
-// await newProduct.save();
-// const supplier = await Supplier.findOneAndUpdate({ 'name': newProduct.supplier }, { $push: { products: newProduct._id } });
-// console.log(supplier);
-res.send(supplierID);
+const newProduct = new Product(req.body);
+await newProduct.save();
+const supplier = await Supplier.findOneAndUpdate({ '_id': newProduct.supplier }, { $push: { products: newProduct._id } });
+console.log(supplier);
+res.redirect('/dashboard/products');
 })
 
 // delete from index
