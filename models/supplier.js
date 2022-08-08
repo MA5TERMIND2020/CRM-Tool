@@ -16,7 +16,10 @@ const supplierSchema = new Schema({
   },
   address: {
     type: String
-  }
+  },
+  products: {
+    type: Schema.Types.ObjectID,
+    ref: 'Product' }
 })
 
 // compile our model for export

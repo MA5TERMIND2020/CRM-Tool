@@ -30,17 +30,17 @@
 
   <div class="mb-2">
   <label for="price" class="form-label">Item Cost</label>
-  <input type="number" class="form-control" name="product[itemCost]" id="price" placeholder="">
+  <input type="number" class="form-control" name="product[itemCost]" id="itemCost" placeholder="">
   </div>
 
   <div class="mb-2">
   <label for="price" class="form-label">Selling Price</label>
-  <input type="number" class="form-control" name="product[sellingPrice]" id="price" placeholder="">
+  <input type="number" class="form-control" name="product[sellingPrice]" id="sellingPrice" placeholder="">
   </div>
 
   <div class="mb-2">
   <label for="price" class="form-label">Current Stock</label>
-  <input type="number" class="form-control" name="product[currentStock]" id="price" placeholder="">
+  <input type="number" class="form-control" name="product[currentStock]" id="currentStock" placeholder="">
   </div>
 
   <div class="mb-2">
@@ -54,9 +54,9 @@
 
     <div class="mb-3">
         <label for="supplier" class="form-label">Supplier</label>
-        <select id="supplier" class="form-select">
-          <% for (let s of product.supplier) {%>
-          <option value="<%=supplier%>"><%=s.name%></option>
+        <select id="supplier" class="form-select" name="product[supplier]">
+          <% for (let supplier of suppliers) {%>
+          <option value="<%=supplier%>"><%=supplier.name%></option>
           <% } %>
         </select>
       </div>

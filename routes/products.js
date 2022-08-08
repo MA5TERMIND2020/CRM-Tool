@@ -13,15 +13,15 @@ router.get('/', async (req, res) => {
 
 router.get('/new', async (req, res) => {
   const product = await Product.find({})
-  const supplier = await Product.find({}).populate('supplier');
-  res.render('pages/products/new', {product, supplier, categories});
+  const suppliers = await Supplier.find({}, {"name":1});
+  res.render('pages/products/new', {product, suppliers, categories});
 })
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const product = await Product.findById(id);
   res.render('pages/products/show', {product});
-})  
+})
 
 router.get('/:id/edit', async (req, res) => {
   const { id } = req.params;
@@ -37,12 +37,14 @@ router.put('/:id', async(req, res) => {
   res.redirect('/dashboard/products');
 })
 
-// submit new
 router.post('/', async(req, res) => {
-  const product = new Product(req.body.product);
-  await product.save();
-  console.log('product');
-  res.render('pages/products/index', {products, categories});
+const { supplier } = req.body;
+const supplierID = supplier._id;
+// const newProduct = new Product(req.body.product);
+// await newProduct.save();
+// const supplier = await Supplier.findOneAndUpdate({ 'name': newProduct.supplier }, { $push: { products: newProduct._id } });
+// console.log(supplier);
+res.send(supplierID);
 })
 
 // delete from index
