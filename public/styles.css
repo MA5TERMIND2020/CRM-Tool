@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+
 }
 
 /*********************************************** Utility Components  *************************************************/
@@ -49,6 +49,21 @@ body {
 i {
   font-size: 1.2rem;
 }
+
+.nav-item button {
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+.nav-item button:hover{
+  background-color: transparent;
+  color: white;
+}
+
 
 /* ------- Hompepage ---------------- */
 
@@ -277,12 +292,13 @@ i {
   line-height: 60px;
 }
 .toggle {
-  position: fixed;
+  /* position: fixed;
   top: 60px;
-  left: 30px;
+  left: 30px; */
   width: 50px;
   height: 40px;
   background: transparent;
+  color: white;
   border-radius: 10px;
   cursor: pointer;
   display: flex;
@@ -290,9 +306,10 @@ i {
   align-items: center;
 }
 .toggle.active {
-  background: grey;
+  background-color: grey;
+  color: white;
 }
-.toggle ion-icon {
+/* .toggle ion-icon {
   position: absolute;
   color: #1c3879;
   font-size: 34px;
@@ -304,6 +321,23 @@ i {
 }
 .toggle ion-icon.close,
 .toggle.active ion-icon.open {
+  display: none;
+} */
+
+#menu-outline, #close-outline {
+  position: absolute;
+  background-color: transparent;
+  color: #1c3879;
+  font-size: 34px;
+  display: none;
+}
+
+.toggle i.open,
+.toggle.active i.close {
+  display: block;
+}
+.toggle i.close,
+.toggle.active i.open {
   display: none;
 }
 

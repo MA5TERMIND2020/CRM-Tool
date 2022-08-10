@@ -1,4 +1,4 @@
-<div class="navigation">
+<div class="navigation px-0">
   <ul>
     <li class="list active">
       <b></b>
@@ -51,28 +51,10 @@
   </ul>
 </div>
 
-<div class="toggle">
+<!-- this is in dashboard-top -->
+<!-- <div class="toggle">
   <ion-icon name="menu-outline" class="open"></ion-icon>
   <ion-icon name="close-outline" class="close"></ion-icon>
-</div>
+</div> -->
 
-<script>
-  let menuToggle = document.querySelector(".toggle");
-  let navigation = document.querySelector(".navigation");
-  menuToggle.onclick = function () {
-    menuToggle.classList.toggle("active");
-    navigation.classList.toggle("active");
-  };
-
-  // add active class in selected list item
-  let list = document.querySelectorAll(".list");
-  for (let i = 0; i < list.length; i++) {
-    list[i].onclick = function () {
-      let j = 0;
-      while (j < list.length) {
-        list[j++].className = "list";
-      }
-      list[i].className = "list active";
-    };
-  }
-</script>
+<!-- scripts have been moved to dashboard-layout -->
