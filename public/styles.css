@@ -111,7 +111,7 @@ i {
 
 .height {
   /*reusable class. be careful changing it */
-  min-height: 90vh;
+  min-height: 70vh;
   max-height: auto;
 }
 
