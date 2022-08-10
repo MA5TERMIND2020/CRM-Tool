@@ -12,6 +12,7 @@ const userRoutes = require('./routes/user');
 const productRoutes = require('./routes/products');
 const supplierRoutes = require('./routes/supplier');
 const customerRoutes = require('./routes/customer');
+const purchaseRoutes = require('./routes/purchase');
 console.log (userRoutes)
 
 // mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -46,6 +47,7 @@ app.use('/users', userRoutes);
 app.use('/dashboard/products', productRoutes);
 app.use('/dashboard/suppliers', supplierRoutes);
 app.use('/dashboard/customers', customerRoutes);
+app.use('/dashboard/purchases', purchaseRoutes);
 
 // show routes for REGULAR PAGES
 app.get('/', (req, res) => {

@@ -278,8 +278,8 @@ i {
   position: relative;
   display: block;
   min-width: 35px;
-  height: 60px;
-  line-height: 70px;
+  /* height: 60px; */
+  line-height: 60px;
   text-align: center;
 }
 .navigation ul li a .icon ion-icon {
@@ -288,7 +288,8 @@ i {
 .navigation ul li a .title {
   position: relative;
   display: block;
-  margin-top: 20px;
+  padding-left: 1rem;
+  /* margin-top: 20px; */
   line-height: 60px;
 }
 .toggle {
@@ -350,11 +351,21 @@ i {
 .hidden {
   display: none;
 }
-/* --------------- PRODUCTS PAGE ---------------*/
 
 .reg-form {
   width: 60%;
   border-radius: 10px;
+}
+
+/* --------------- PURCHASES PAGE ---------------*/
+.product-header {
+max-width: 1000px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+/*can be 33% 33% 33% but will have column gaps
+grid-column-gaps: 40px;*/
+grid-row-gap: 45px;
 }
 /* --------------- FOOTER --------------------- */
 .copyrights {

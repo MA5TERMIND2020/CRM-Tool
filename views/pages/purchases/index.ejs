@@ -1,0 +1,51 @@
+<%- layout('layout/dashboard-template')%>
+<!-- BREADCRUMBS -->
+<div class="">
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Purchases</li>
+  </ol>
+</nav>
+</div>
+
+<!-- MAIN -->
+<div class="container-fluid">
+
+<div class="date-supplier mb-3 d-flex justify-content-between">
+  <h5>Date: $date</h5>
+  <h5>Supplier: $supplier</h5>
+</div>
+<div class="purchase-body d-flex justify-content-between">
+  <!-- left side for list of ordered items -->
+  <div class="orderItems">
+    <div class="product-header">
+      <h5 class="product-title text-center px-2">ITEM</h5>
+      <h5 class="cost text-center px-2">PRICE</h5>
+      <h5 class="quantity text-center px-2">QUANTITY</h5>
+      <h5 class="total text-center px-2">TOTAL</h5>
+    </div>
+    <div class="products">
+<!-- populated using javascripts -->
+    </div>
+  </div>
+
+  <!-- right side for adding orders -->
+  <div class="addOrders">
+    <div class="searchBar mb-3">
+      <input type="text" id="search-term">
+      <button id="searchBtn"><i class="fa fa-search"></i></button>
+    </div>
+    <div class="">
+      <ul class="list-group">
+  <li class="list-group-item">Product 1</li>
+  <li class="list-group-item">Product 2</li>
+  <li class="list-group-item">Product 3</li>
+  <li class="list-group-item">Product 4</li>
+  <li class="list-group-item">Product 5</li>
+</ul>
+    </div>
+  </div>
+</div>
+
+</div>
