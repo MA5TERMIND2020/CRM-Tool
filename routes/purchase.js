@@ -5,9 +5,11 @@ const Supplier = require('../models/supplier');
 const Product = require('../models/products');
 const Purchase = require('../models/purchases');
 
-router.get('/', (req, res) => {
-    // const products = await Purchase.find({});
-    res.render('pages/purchases/index');
+router.get('/', async (req, res) => {
+    const { id } = req.params;
+    const supplier = await Supplier.findById(id).populate('product');
+    const products = await Product.find({});
+    res.render('pages/purchases/index', {supplier, products});
 })
 
 router.get('/new', async (req, res) => {
