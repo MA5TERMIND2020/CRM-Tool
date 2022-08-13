@@ -31,16 +31,12 @@ body {
   background: #fff;
 }
 
-.background {
-  background-color: var(--color-body);
-  background-image: url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: var(--color-font);
-  font-size: 0.9rem;
+.primary-color {
+  background-color: var(--color-primary);
+  color: white;
 }
-/* BEAUTIFY THE main page NAV */
+
+/* --------------- DASHBOARD NAVBAR------------ */
 
 .nav-item {
   margin: 0 1rem;
@@ -64,68 +60,7 @@ i {
   color: white;
 }
 
-
-/* ------- Hompepage ---------------- */
-
-.padding {
-  padding: 1rem 3rem;
-}
-
-.primary-color {
-  background-color: var(--color-primary);
-  color: white;
-}
-/* features */
-
-#features {
-  margin-top: 20rem;
-  padding: 7% 15%;
-}
-
-.card-extra {
-  background-color: #38a3a5;
-  justify-content: center;
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 2rem;
-  box-shadow: var(--box-shadow-small);
-  margin: 0 0 2rem;
-  width: 20rem;
-  height: 20rem;
-}
-
-.card-icon {
-  margin: 1rem 0;
-  color: var(--color-primary);
-}
-.card-icon:hover {
-  color: #0c0d0d;
-}
-
-.feature-box-p {
-  padding: 5%;
-}
-
-/* ------------- LOGIN PAGE -------------- */
-
-.height {
-  /*reusable class. be careful changing it */
-  min-height: 90vh;
-  max-height: auto;
-}
-
-.login-inner {
-  width: 35%;
-  min-width: 300px;
-  height: min-content;
-  background-color: white;
-  color: var(--color-font);
-  border-radius: 10px;
-  box-shadow: var(--box-shadow);
-}
-
-/* --------------- DASHBOARD PAGE ------------ */
+/* --------------- DASHBOARD Results PAGE ------------ */
 
 .img-container {
   width: 8rem;
@@ -139,27 +74,6 @@ i {
 
 .date {
   margin-right: 14.688rem;
-}
-
-#sidebarMenu {
-  background-color: #d9dcd6;
-}
-
-#sidebarMenu li {
-  line-height: 2rem;
-}
-
-#sidebarMenu i {
-  margin-right: 2rem;
-  width: 16px;
-  height: 16px;
-  color: #5d5d5d;
-}
-
-#sidebarMenu .nav-link {
-  font-weight: 500;
-  color: #333;
-  vertical-align: text-bottom;
 }
 
 .dashboard-main {
@@ -429,15 +343,4 @@ grid-row-gap: 45px;
       cursor: pointer;
   }
 
-}
-/* --------------- FOOTER --------------------- */
-.copyrights {
-  text-align: center;
-  color: #d9dcd6;
-  padding-top: 1rem;
-  margin-top: 7rem;
-}
-
-.footer-icon {
-  margin: 0 1rem;
 }
