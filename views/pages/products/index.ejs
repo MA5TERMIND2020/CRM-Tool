@@ -48,7 +48,7 @@
         <th scope="row"><a class="btn btn-primary btn-sm"
           href="/dashboard/products/<%= product._id %>/edit">
             Edit</a></th>
-        <td><%= product.name %></td>
+        <td><a href="/dashboard/products/<%= product._id%>"><%= product.name %></a></td>
         <td><%= product.intensity %></td>
         <td><%= product.weight %></td>
         <td><%= product.itemCost %></td>
@@ -68,7 +68,7 @@
       <tr>
         <th scope="row"><a class="btn btn-primary btn-sm" href="/dashboard/products/<%= product._id %>/edit">
             Edit</a></th>
-            <td><%= product.name %></td>
+            <td><a href="/dashboard/products/<%= product._id%>"><%= product.name %></a></td>
             <td><%= product.intensity %></td>
             <td><%= product.weight %></td>
             <td><%= product.itemCost %></td>

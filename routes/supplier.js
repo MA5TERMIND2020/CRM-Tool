@@ -15,7 +15,7 @@ router.get('/new', (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  const supplier = await Supplier.findById(id);
+  const supplier = await Supplier.findById(id).populate('products');
   res.render('pages/suppliers/show', {supplier});
 } )
 

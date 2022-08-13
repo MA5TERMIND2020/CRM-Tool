@@ -17,7 +17,6 @@ console.log (userRoutes)
 
 // mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.connect('mongodb://0.0.0.0:27017/crm', { useNewUrlParser: true, useUnifiedTopology: true })
-//mongoose.connect('mongodb://localhost:27017/crm', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Mongo connection open!!!");
   })
