@@ -39,6 +39,12 @@ body {
 .white {
   background-color: white;
 }
+
+.height {
+  /*reusable class. be careful changing it */
+  min-height: 90vh;
+  max-height: auto;
+}
 /* --------------- DASHBOARD NAVBAR------------ */
 
 .nav-item {
@@ -344,6 +350,4 @@ grid-row-gap: 45px;
       font-size: 1rem;
       color: darkgrey;
       cursor: pointer;
-  }
-
 }
