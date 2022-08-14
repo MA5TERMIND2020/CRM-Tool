@@ -32,7 +32,7 @@ body {
 }
 
 .background {
-  background-color: var(--color-body);
+  background-color: var(--color-font);
   background-image: url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab);
   background-repeat: no-repeat;
   background-size: cover;
