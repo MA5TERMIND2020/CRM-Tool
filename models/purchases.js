@@ -6,6 +6,9 @@ const purchaseSchema = new Schema({
         type: Date,
         required: true
       },
+      invoiceNumber: {
+        type: String
+      },
       supplier: {
         type: String,
         ref: 'Supplier'

@@ -5,6 +5,10 @@ const Supplier = require('../models/supplier');
 const Product = require('../models/products');
 const Purchase = require('../models/purchases');
 
+router.get('/', async (req, res) => {
+  res.render('pages/purchases/index');
+})
+
 // router.get('/:id', async (req, res) => {
 //   const { id } = req.params;
 //   const supplier = await Supplier.findById(id);
