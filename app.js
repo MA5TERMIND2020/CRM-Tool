@@ -14,7 +14,6 @@ const supplierRoutes = require('./routes/supplier');
 const customerRoutes = require('./routes/customer');
 const purchaseRoutes = require('./routes/purchase');
 const saleRoutes = require('./routes/sale')
-console.log (userRoutes)
 
 // mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.connect('mongodb://0.0.0.0:27017/crm', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -60,7 +59,7 @@ app.get('/register', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-  res.render('login');
+  res.render('login', {error: false});
 })
 
 // this is just for designing purposes,
