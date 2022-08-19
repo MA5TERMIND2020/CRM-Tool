@@ -8,6 +8,10 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override'); //to be able to use app.put
 const session = require('express-session'); // needed for flash to work; stores data to local memory
 const flash = require('connect-flash'); //
+const Joi = require('joi'); // for validation
+
+// variables that deal with errors
+const ExpressError = require('./utilities/ExpressError');
 
 const sessionOptions = {secret: 'hushhush', resave: false, saveUninitialized: false}
 app.use(session(sessionOptions));
@@ -79,9 +83,14 @@ app.post('/dashboard', (req, res) => {
   res.render('dashboard');
 })
 
-// CUSTOMER'S SECTION
-app.get('/dashboard/customers', (req, res) => {
-  res.render('pages/customers/show');
+app.all('*', (req, res, next) => { // * means for any kind of path
+  next(new ExpressError('Page Not Found'), 404)
+})
+
+app.use((err, req, res, next) => {
+  const { statusCode = 500} = err; // 500 and 'something went wrong' is just the default
+  if(!err.message) err.message = 'Oh no, Something went wrong!'
+  res.status(statusCode).render('error', {err});
 })
 
 
