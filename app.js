@@ -6,12 +6,6 @@ const ejs = require('ejs');
 const ejsMate = require('ejs-mate');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override'); //to be able to use app.put
-const session = require('express-session'); // needed for flash to work; stores data to local memory
-const flash = require('connect-flash'); //
-
-const sessionOptions = {secret: 'hushhush', resave: false, saveUninitialized: false}
-app.use(session(sessionOptions));
-app.use(flash());
 
 // require routes USER, PRODUCT, CUSTOMER, SUPPLIER
 const userRoutes = require('./routes/user');
