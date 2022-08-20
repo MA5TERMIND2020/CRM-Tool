@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router({mergeParams: true});
+const router = express.Router();
 
 // require model database
 const Supplier = require('../models/supplier');
@@ -15,9 +15,7 @@ router.get('/new', (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  const supplier = await Supplier.findById(id);
-  // const supplier = await Supplier.findById(id).populate('products', {name: 1});
-  // res.send(supplier);
+  const supplier = await Supplier.findById(id).populate('products');
   res.render('pages/suppliers/show', {supplier});
 } )
 
