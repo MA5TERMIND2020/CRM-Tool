@@ -8,7 +8,7 @@ const categories = ['small', 'big', 'combo']
 // show all products
 router.get('/', async (req, res) => {
   const products = await Product.find({});
-  res.render('pages/products/index', {products, categories});
+  res.render('pages/products/index', {products, categories, messages: req.flash('success')});
 })
 
 router.get('/new', async (req, res) => {
@@ -44,6 +44,7 @@ const newProduct = new Product(req.body);
 await newProduct.save();
 const supplier = await Supplier.findOneAndUpdate({ '_id': newProduct.supplier }, { $push: { products: newProduct._id } });
 console.log(supplier);
+req.flash('success', 'You have successfully added a new product!');
 res.redirect('/dashboard/products');
 })
 
