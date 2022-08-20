@@ -13,8 +13,32 @@ const Joi = require('joi'); // for validation
 // variables that deal with errors
 const ExpressError = require('./utilities/ExpressError');
 
-const sessionOptions = {secret: 'hushhush', resave: false, saveUninitialized: false}
-app.use(session(sessionOptions));
+// mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://0.0.0.0:27017/crm', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+ })
+  .then(() => {
+    console.log("Mongo connection open!!!");
+  })
+  .catch(() => {
+    console.log("Oh no Mongo Connection error!!");
+    console.log(err);
+  })
+
+const sessionConfig = {
+  secret: 'hushhush',
+  resave: false, // set for deprecation warnings to go away
+  saveUninitialized: true, // set for deprecation warnings to go away
+  cookie: {
+    httpOnly: true,
+    //cookie expires in 7 days
+    expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+    maxAge: 1000 * 60 * 60 * 24 * 7
+  }
+}
+
+app.use(session(sessionConfig));
 app.use(flash());
 
 // require routes USER, PRODUCT, CUSTOMER, SUPPLIER
@@ -24,16 +48,6 @@ const supplierRoutes = require('./routes/supplier');
 const customerRoutes = require('./routes/customer');
 const purchaseRoutes = require('./routes/purchase');
 const saleRoutes = require('./routes/sale')
-
-// mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-mongoose.connect('mongodb://0.0.0.0:27017/crm', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log("Mongo connection open!!!");
-  })
-  .catch(() => {
-    console.log("Oh no Mongo Connection error!!");
-    console.log(err);
-  })
 
 
 // Static Files

@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router(); // will make a new router object
+const router = express.Router({mergeParams: true}); // will make a new router object
 
 const Supplier = require('../models/supplier');
 const Product = require('../models/products');
