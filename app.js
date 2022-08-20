@@ -97,6 +97,10 @@ app.post('/dashboard', (req, res) => {
   res.render('dashboard');
 })
 
+app.get('/about-us', (req, res) => {
+  res.render('about-us');
+});
+
 app.all('*', (req, res, next) => { // * means for any kind of path
   next(new ExpressError('Page Not Found'), 404)
 })
