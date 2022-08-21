@@ -1,0 +1,49 @@
+<%- layout('layout/dashboard-template')%>
+
+<!-- RIGHT DASHBOARD RESULTS -->
+
+<div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-start">
+    <div class="img-container">
+      <img src="/images/female.png" alt="" class="img-fluid" />
+    </div>
+    <div class="px-3">
+      <h3 class="hi-user">Hi user </h3>
+      <h4>Welcome Back</h4>
+    </div>
+  </div>
+  <div class="text-left">
+    <% const month =
+    ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    %> <% const today = new Date() %>
+    <h3 class="date">
+      Today is <%= month[today.getMonth()] +' '+today.getDate() +', '+
+      today.getFullYear()%>
+    </h3>
+  </div>
+</div>
+
+<div class="dashboad-top d-flex p-4 bd-highlight">
+  <div class="left">
+    <div class="box-item mb-5">
+      <h3 class="stocks-box">Low Stocks</h3>
+      <ul>
+        <li>product_id - 5 pieces left</li>
+        <li>product_id - 5 pieces left</li>
+        <li>product_id - 5 pieces left</li>
+
+        <span>View more...</span>
+      </ul>
+    </div>
+    <div class="box-item p-4">
+      <h3>For Delivery Today:</h3>
+    </div>
+  </div>
+  <div class="right">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/0/03/Charts_SVG_Example_7_-_Grouped_Line_Chart.svg"
+      alt=""
+      class="img-fluid"
+    />
+  </div>
+</div>
