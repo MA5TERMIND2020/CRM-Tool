@@ -287,10 +287,11 @@ i {
 max-width: 1000px;
 margin: 0 auto;
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 /*can be 33% 33% 33% but will have column gaps
 grid-column-gaps: 40px;*/
 grid-row-gap: 45px;
+text-align: center;
 }
 
 .searchBar input {

@@ -1,20 +1,32 @@
-// dashboard sidebar
+const showOrders = document.getElementById('showOrders');
 
-let menuToggle = document.querySelector('.toggle');
-let navigation = document.querySelector('.navigation')
-menuToggle.onclick = function(){
-  menuToggle.classList.toggle('active');
-  navigation.classList.toggle('active');
+const addOrder = (name, price) => {
+this.name = name;
+this.price = price;
+addToList(this.name, this.price);
 }
 
-// add active class in selected list item
-let list = document.querySelectorAll('.list');
-for (let i = 0; i < list.length; i++) {
-  list[i].onclick = function() {
-    let j = 0;
-    while(j < list.length) {
-      list[j++].className = 'list';
-    }
-    list[i].className = 'list active';
-  }
+const addToList = (name, price) => {
+let amount = 1;
+const orderEl = document.createElement('div');
+orderEl.classList.add('product-header');
+orderEl.innerHTML = `
+    <div class="product-title">
+    <i class="fa fa-times-circle"></i>
+    <span>${this.name}</span>
+    </div>
+
+    <div class="cost">$${this.price},00</div>
+
+    <div class="quantity">
+      <i class="fa fa-chevron-circle-left"></i>
+      <span>${amount}</span>
+      <i class="fa fa-chevron-circle-right"></i>
+    </div>
+    <div class="total">
+      $${price * amount},00
+    </div>
+    `;
+
+    showOrders.appendChild(orderEl);
 }
