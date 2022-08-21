@@ -22,13 +22,14 @@
         <li class="list-group-item text-muted"><%= supplier.tel %></li>
         <li class="list-group-item text-muted"><%= supplier.email %></li>
         <li class="list-group-item text-muted"><%= supplier.address %></li>
-        <!-- <li class="list-group-item text-muted">
+        <li class="list-group-item text-muted">
           List of Products
-          <ul> <% for (let product of supplier.products) %>
-            <li><%= product.name %></li>
+          <ul>
+            <% for (let product of supplier.products) { %>
+            <li><%= product.name %>, <%= product.weight %></li>
             <% } %>
           </ul>
-        </li> -->
+        </li>
       </ul>
 
       <div class="card-body">
@@ -36,9 +37,6 @@
         <form class="d-inline" action="/dashboard/suppliers/<%=supplier._id%>?_method=DELETE" method="post">
           <button class="card-link btn btn-danger">Delete</button>
         </form>
-      </div>
-      <div class="card-footer text-muted">
-        <a href="/dashboard/suppliers">All Suppliers</a>
       </div>
 
     </div>
