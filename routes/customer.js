@@ -23,7 +23,7 @@ router.put('/:id', async(req, res) => {
   const { id } = req.params;
   const customer = await Customer.findByIdAndUpdate(id, { ...req.body.customer })
   const allCustomers = await Customer.find({});
-  console.log(req.body);
+  req.flash('success', 'Successfully updated customer information.')
   res.redirect('/dashboard/customers');
 })
 

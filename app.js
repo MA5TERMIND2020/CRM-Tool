@@ -9,11 +9,15 @@ const methodOverride = require('method-override'); //to be able to use app.put
 const session = require('express-session'); // needed for flash to work; stores data to local memory
 const flash = require('connect-flash'); //
 const Joi = require('joi'); // for validation
+const ExpressError = require('./utilities/ExpressError'); // for errors
+// require routes USER, PRODUCT, CUSTOMER, SUPPLIER
+const userRoutes = require('./routes/user');
+const productRoutes = require('./routes/products');
+const supplierRoutes = require('./routes/supplier');
+const customerRoutes = require('./routes/customer');
+const purchaseRoutes = require('./routes/purchase');
+const saleRoutes = require('./routes/sale')
 
-// variables that deal with errors
-const ExpressError = require('./utilities/ExpressError');
-
-// mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.connect('mongodb://0.0.0.0:27017/crm', {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -25,6 +29,13 @@ mongoose.connect('mongodb://0.0.0.0:27017/crm', {
     console.log("Oh no Mongo Connection error!!");
     console.log(err);
   })
+
+app.engine('ejs', ejsMate);
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));   // to setup the path
+app.use(express.urlencoded({extended:true}))   // Parsing Middleware
+app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public'))); //static files
 
 const sessionConfig = {
   secret: 'hushhush',
@@ -41,29 +52,12 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
-// require routes USER, PRODUCT, CUSTOMER, SUPPLIER
-const userRoutes = require('./routes/user');
-const productRoutes = require('./routes/products');
-const supplierRoutes = require('./routes/supplier');
-const customerRoutes = require('./routes/customer');
-const purchaseRoutes = require('./routes/purchase');
-const saleRoutes = require('./routes/sale')
 
-
-// Static Files
-app.use(express.static(path.join(__dirname, 'public')));
-
-
-// ejs allows us to use javascript codes within html files
-app.set('view engine', 'ejs');
-app.engine('ejs', ejsMate);
-
-// to setup the path
-app.set('views', path.join(__dirname, 'views'));
-
-// Parsing Middleware
-app.use(express.urlencoded({extended:true}))
-app.use(methodOverride('_method'));
+app.use((req, res, next) => {
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    next();
+})
 
 // To use the exported routes
 app.use('/users', userRoutes);
@@ -86,6 +80,10 @@ app.get('/login', (req, res) => {
   res.render('login', {error: false});
 })
 
+app.get('/about-us', (req, res) => {
+  res.render('about-us');
+});
+
 // this is just for designing purposes,
 // must be deleted once deployed because dashboard must depend on who was logged in
 app.get('/dashboard', (req, res) => {
@@ -96,10 +94,6 @@ app.post('/dashboard', (req, res) => {
   console.log('you are logged in')
   res.render('dashboard');
 })
-
-app.get('/about-us', (req, res) => {
-  res.render('about-us');
-});
 
 app.all('*', (req, res, next) => { // * means for any kind of path
   next(new ExpressError('Page Not Found'), 404)

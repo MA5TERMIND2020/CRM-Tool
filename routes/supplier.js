@@ -32,7 +32,7 @@ router.get('/:id/edit', async (req, res) => {
 router.put('/:id', async(req, res) => {
   const { id } = req.params;
   const supplier = await Supplier.findByIdAndUpdate(id, { ...req.body.supplier })
-  console.log(req.body);
+  req.flash('success', 'Successfully updated supplier.')
   res.redirect(`/dashboard/suppliers/${supplier._id}`);
 })
 

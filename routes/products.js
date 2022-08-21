@@ -35,7 +35,7 @@ router.put('/:id', async(req, res) => {
   const { id } = req.params;
   const updatedProduct = await Product.findByIdAndUpdate(id, { ...req.body.product })
   const supplier = await Supplier.findOneAndUpdate({ '_id': updatedProduct.supplier }, { $push: { products: updatedProduct._id } });
-  console.log(req.body);
+  req.flash('success', 'Successfully updated product.')
   res.redirect('/dashboard/products');
 })
 
