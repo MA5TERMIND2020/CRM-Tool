@@ -20,7 +20,10 @@ router.get('/new', async (req, res) => {
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const product = await Product.findById(id).populate('supplier');
-  console.log(product);
+  if (!product) {
+    req.flash('error', 'Cannot find that product!');
+    return res.redirect('/dashboard/products');
+  }
   res.render('pages/products/show', {product});
 })
 

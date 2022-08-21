@@ -38,10 +38,10 @@
       <h5 class="quantity text-center px-2">QUANTITY</h5>
       <h5 class="total text-center px-2">TOTAL</h5>
     </div>
-    <div class="products">
-<!-- populated using javascripts -->
-
+    <div id="showOrders">
+  <!-- populated using javascripts -->
     </div>
+
   </div>
 
   <!-- right side for adding orders -->
@@ -55,7 +55,9 @@
           <% for (let product of products) { %>
   <li class="list-group-item d-flex justify-content-between">
     <span><%= product.name %></span>
-    <button class="addBtn" id="addBtn"><i class="fa-solid fa-square-plus"></i></button>
+    <button class="addBtn" id="addBtn" onclick="addOrder('<%=product.name%>', '<%=product.sellingPrice%>')">
+      <i class="fa-solid fa-square-plus"></i>
+    </button>
   </li>
     <% } %>
 </ul>

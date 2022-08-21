@@ -15,9 +15,11 @@ router.get('/new', (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  // const supplier = await Supplier.findById(id);
   const supplier = await Supplier.findById(id).populate('products');
-  // res.send(supplier);
+  if (!supplier) {
+    req.flash('error', 'No supplier found!');
+    return res.redirect('/dashboard/suppliers');
+  }
   res.render('pages/suppliers/show', {supplier});
 } )
 
