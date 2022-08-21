@@ -17,6 +17,8 @@
   --color-secondary: #38a3a5;
   --color-secondary-d: #3c6e71;
   --color-body: #ececec;
+   /* #F0FFF0; */
+  --color-input: #F5FFFA;
   --color-font: #353535;
 
   /* box shadow */
@@ -293,7 +295,7 @@ grid-row-gap: 45px;
 
 .searchBar input {
   margin: 0;
-  background-color: white;
+  background-color: var(--color-input);
   font-size: 1rem;
   font-weight: lighter;
   border: none;
@@ -308,12 +310,12 @@ grid-row-gap: 45px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   width: 20%;
-    background-color: var(--color-body);
+    background-color: var(--color-secondary);
     margin: 0;
     padding: 0.5rem 0.7rem;
-    border: 1px solid var(--color-body);
+    border: 1px solid var(--color-secondary);
     font-size: 1rem;
-    color: var(--color-secondary-d);
+    color: white;
     cursor: pointer;
 }
 
@@ -326,17 +328,15 @@ grid-row-gap: 45px;
   color: green;
 }
 
-.date-supplier input {
+select, input {
     margin-left: 0.5rem;
-    background-color: white;
+    background-color: var(--color-input);
     font-size: 1rem;
     font-weight: lighter;
-    border: none;
     width: 80%;
     padding: 0.2rem;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-    border: 1px solid var(--color-body);
+    border-radius: 3px;
+    border: 1px solid lightgrey;
   }
 
   .date-supplier button {
