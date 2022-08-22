@@ -283,15 +283,19 @@ i {
 }
 
 /* --------------- PURCHASES PAGE ---------------*/
-.product-header {
-max-width: 1000px;
+.order-row {
+max-width: 900px;
+min-width: min-content;
 margin: 0 auto;
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 /*can be 33% 33% 33% but will have column gaps
 grid-column-gaps: 40px;*/
-grid-row-gap: 45px;
 text-align: center;
+}
+
+#showOrders {
+  min-width: 150px;
 }
 
 .searchBar input {

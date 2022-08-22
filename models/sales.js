@@ -28,14 +28,6 @@ const saleSchema = new Schema({
           required: true
         }
       }],
-      itemsPrice: {
-        type: Number,
-        required: true
-      },
-      vat: {
-        type: Number,
-        required: true
-      },
       totalPrice: {
         type: Number,
         required: true

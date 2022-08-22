@@ -2,67 +2,73 @@
 <!-- BREADCRUMBS -->
 <div class="">
   <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-    <li class="breadcrumb-item"><a href="/dashboard/sales">Sales</a></li>
-    <li class="breadcrumb-item active" aria-current="page">New</li>
-  </ol>
-</nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="/dashboard/sales">Sales</a></li>
+      <li class="breadcrumb-item active" aria-current="page">New</li>
+    </ol>
+  </nav>
 </div>
 
 <!-- MAIN -->
 <div class="white rounded p-3">
 
-<div class="rounded border p-3 mb-3 d-flex justify-content-between">
-  <div class="date-supplier d-flex align-items-center no-wrap">
-    <label for="date"><h5>Date:</h5></label>
-    <input type="date">
-  </div>
-  <div class="d-flex align-items-center no-wrap">
-  <label for="customer"><h5>Customer:</h5></label>
-  <select id="customer" class="form-select"
-  name="customer">
-    <% for (let customer of customers) { %>
-    <option value="<%=customer%>"><%= customer.name %></option>
-    <% } %>
-  </select>
-  </div>
-</div>
-
-<div class="purchase-body d-flex justify-content-between">
-  <!-- left side for list of ordered items -->
-  <div class="orderItems rounded border p-3">
-    <div class="product-header border-bottom">
-      <h5 class="product-title text-center px-2">ITEM</h5>
-      <h5 class="cost text-center px-2">PRICE</h5>
-      <h5 class="quantity text-center px-2">QUANTITY</h5>
-      <h5 class="total text-center px-2">TOTAL</h5>
+  <div class="rounded border p-3 mb-3 d-flex justify-content-between flex-wrap">
+    <div class="date-supplier d-flex align-items-center no-wrap">
+      <label for="date">
+        <h5>Date:</h5>
+      </label>
+      <input type="date">
     </div>
-    <div id="showOrders">
-  <!-- populated using javascripts -->
-    </div>
-
-  </div>
-
-  <!-- right side for adding orders -->
-  <div class="addOrders rounded border p-3">
-    <div class="searchBar d-flex no-wrap mb-3">
-      <input type="text" id="search-term">
-      <button class="searchIcon"><i class="fa fa-search"></i></button>
-    </div>
-    <div class="">
-      <ul class="list-group">
-          <% for (let product of products) { %>
-  <li class="list-group-item d-flex justify-content-between">
-    <span><%= product.name %></span>
-    <button class="addBtn" id="addBtn" onclick="addOrder('<%=product.name%>', '<%=product.sellingPrice%>')">
-      <i class="fa-solid fa-square-plus"></i>
-    </button>
-  </li>
-    <% } %>
-</ul>
+    <div class="d-flex align-items-center no-wrap">
+      <label for="customer">
+        <h5>Customer:</h5>
+      </label>
+      <select id="customer" class="form-select" name="customer">
+        <% for (let customer of customers) { %>
+        <option value="<%=customer%>"><%= customer.name %></option>
+        <% } %>
+      </select>
     </div>
   </div>
-</div>
 
+  <div className="container-fluid">
+    <div class="d-flex justify-content-between flex-wrap">
+      <!-- left side for list of ordered items -->
+      <div class="rounded border p-3">
+        <div class="order-row border-bottom">
+          <h5 class="product-title">ITEM</h5>
+          <h5 class="cost">PRICE</h5>
+          <h5 class="quantity">QUANTITY</h5>
+          <h5 class="total">TOTAL</h5>
+        </div>
+        <div id="showOrders">
+          <!-- populated using javascripts -->
+        </div>
+        <div class="">
+          <p>Total: $<span id="totalprice"></span></p>
+        </div>
+      </div>
+
+      <!-- right side for adding orders -->
+      <div class="addOrders rounded border p-3">
+        <div class="searchBar d-flex no-wrap mb-3">
+          <input type="text" id="search-term">
+          <button class="searchIcon"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="">
+          <ul class="list-group">
+            <% for (let product of products) { %>
+            <li class="list-group-item d-flex justify-content-between">
+              <span><%= product.name %></span>
+              <button class="addBtn" id="addBtn" onclick="addOrder('<%=product.name%>', '<%=product.sellingPrice%>')">
+                <i class="fa-solid fa-square-plus"></i>
+              </button>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
