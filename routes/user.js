@@ -2,6 +2,15 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 
+const isAuth = (req, res, next) => {
+  if(req.session.isAuth) {
+    next()
+  } else {
+    res.redirect('/')
+  }
+}
+
+
 // require model
 const Users = require('../models/user');
 
@@ -36,7 +45,7 @@ router.post('/login', async (req, res) => {
     //console.log (userData);
       
       bcrypt.compare(req.body.user.password, user[0].password, function(error, result)
-      { if (result) {res.redirect ('/dashboard'); return;}
+      { if (result) {req.session.isAuth = true; res.redirect ('/dashboard'); return;}
         else { console.log("Invalid Password"); res.render ("login", {error: "An error occured"}); return}})  
     }
   catch (error) {

@@ -7,6 +7,7 @@ const ejsMate = require('ejs-mate');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override'); //to be able to use app.put
 const session = require('express-session'); // needed for flash to work; stores data to local memory
+const MongoDBSession = require('connect-mongodb-session')(session);
 const flash = require('connect-flash'); //
 const Joi = require('joi'); // for validation
 const ExpressError = require('./utilities/ExpressError'); // for errors
@@ -29,6 +30,32 @@ mongoose.connect('mongodb://0.0.0.0:27017/crm', {
     console.log("Oh no Mongo Connection error!!");
     console.log(err);
   })
+//Creates a session document in MongoDB
+  const store = new MongoDBSession({
+    uri: "mongodb://0.0.0.0:27017/crm",
+    collection: 'Sessions'
+  })
+//Generates a session ID cookie
+  app.use(session({
+    secret: 'I voted for Trump',
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
+    },
+    store: store,
+    resave: true,
+    saveUninitialized: true
+  }));
+
+  //Checks to see if the user is authentcated by the server
+  const isAuth = (req, res, next) => {
+    if(req.session.isAuth) {
+      next()
+    } else {
+      res.redirect('/')
+    }
+  }
+  
+  
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
@@ -86,7 +113,7 @@ app.get('/about-us', (req, res) => {
 
 // this is just for designing purposes,
 // must be deleted once deployed because dashboard must depend on who was logged in
-app.get('/dashboard', (req, res) => {
+app.get('/dashboard', isAuth, (req, res) => {
   res.render('dashboard');
 })
 
