@@ -55,7 +55,7 @@
         <td><%= product.sellingPrice %></td>
         <td><%= product.currentStock %></td>
         <td>
-          <form class="" action="/dashboard/suppliers?_method=DELETE" method="post">
+          <form class="" action="/dashboard/products/<%= product._id %>?_method=DELETE" method="post">
             <button class="btn btn-danger btn-sm">Delete</button>
           </form>
         </td>
@@ -75,7 +75,7 @@
             <td><%= product.sellingPrice %></td>
             <td><%= product.currentStock %></td>
         <td>
-          <form class="" action="/dashboard/suppliers?_method=DELETE" method="post">
+          <form class="" action="/dashboard/products/<%= product._id %>?_method=DELETE" method="post">
             <button class="btn btn-danger btn-sm">Delete</button>
           </form>
         </td>

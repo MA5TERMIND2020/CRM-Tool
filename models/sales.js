@@ -4,19 +4,21 @@ const { Schema } = mongoose;
 const saleSchema = new Schema({
       date: {
         type: Date,
-        required: true
+        default: Date.now(),
+        trim: true
       },
       invoiceNumber: {
         type: String
       },
       customer: {
-        type: String,
+        type: Schema.Types.ObjectId,
         ref: 'Customer'
       },
-      orderItems: [{
-        productName: {
-          type: mongoose.Schema.Types.ObjectID,
-          ref: 'Product',
+      orderItems:
+      [
+        {
+        name: {
+          type: String,
           require: true
         },
         qty: {
@@ -26,8 +28,13 @@ const saleSchema = new Schema({
         price: {
           type: Number,
           required: true
+        },
+        product: {
+          type: Schema.Types.ObjectId,
+          required: true
         }
-      }],
+      }
+    ],
       totalPrice: {
         type: Number,
         required: true

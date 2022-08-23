@@ -28,42 +28,21 @@
 
     <!-------- LIST OF PURCHASES ---------------->
     <tbody class="table-primary mb-5">
+      <% for (let sale of sales) { %>
       <tr class="table-primary">
         <th scope="row">1</th>
-        <td>Date</td>
-        <td><a href="#">000000000</a></td>
-        <td>Supplier</td>
-        <td><i>Product 1, Product 2, Product 3...<i></td>
-        <td><span>$</span>93</td>
-        <td scope="row"><a class="btn btn-primary btn-sm"
-          href="/dashboard/puchases/purchase._id/edit">
-            Edit</a></td>
-      </tr>
-
-      <!-- sample row 2 -->
-      <tr class="table-primary">
-        <th scope="row">3</th>
-        <td>Date</td>
-        <td>000000000</td>
-        <td>Supplier</td>
-        <td><i>Product 1, Product 2, Product 3...<i></td>
-        <td><span>$</span>93</td>
-        <td scope="row"><a class="btn btn-primary btn-sm"
-          href="/dashboard/puchases/purchase._id/edit">
-            Edit</a></td>
-      </tr>
-
-      <!-- sample row 3 -->
-      <tr class="table-primary">
-        <th scope="row">3</th>
-        <td>Date</td>
-        <td>000000000</td>
-        <td>Supplier</td>
-        <td><i>Product 1, Product 2, Product 3...<i></td>
-        <td><span>$</span>93</td>
-        <td scope="row"><a class="btn btn-primary btn-sm"
-          href="/dashboard/puchases/sale._id/edit">
-            Edit</a></td>
+        <td><%= sale.date %></td>
+        <td><a href="#"><%= sale.invoiceNumber%></a></td>
+        <td><%= sale.customer %></td>
+        <td> <%= sale.orderItems{ %>
+        </td>
+        <td><span>$</span><%= sale.totalPrice %></td>
+        <td scope="row">
+          <form class="" action="/dashboard/sales/<%= sale._id %>?_method=DELETE" method="post">
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </form>
+        </td>
+      <%  } %>
       </tr>
         </tbody>
 </table>

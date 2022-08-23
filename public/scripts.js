@@ -10,7 +10,6 @@ addToList(this.name, this.price);
 const addToList = (name, price) => {
 // console.log(priceArray);
 let amount = 1;
-
 const orderEl = document.createElement('div');
 orderEl.classList.add('order-row');
 orderEl.innerHTML = `
