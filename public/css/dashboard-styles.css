@@ -218,9 +218,9 @@ i {
   line-height: 60px;
 }
 .toggle {
-  /* position: fixed;
+  position: fixed;
   top: 60px;
-  left: 30px; */
+  left: 30px; 
   width: 50px;
   height: 40px;
   background: transparent;
@@ -235,7 +235,7 @@ i {
   background-color: grey;
   color: white;
 }
-/* .toggle ion-icon {
+ .toggle ion-icon {
   position: absolute;
   color: #1c3879;
   font-size: 34px;
@@ -248,7 +248,7 @@ i {
 .toggle ion-icon.close,
 .toggle.active ion-icon.open {
   display: none;
-} */
+} 
 
 #menu-outline, #close-outline {
   position: absolute;
@@ -283,15 +283,19 @@ i {
 }
 
 /* --------------- PURCHASES PAGE ---------------*/
-.product-header {
-max-width: 1000px;
+.order-row {
+max-width: 900px;
+min-width: min-content;
 margin: 0 auto;
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 /*can be 33% 33% 33% but will have column gaps
 grid-column-gaps: 40px;*/
-grid-row-gap: 45px;
 text-align: center;
+}
+
+#showOrders {
+  min-width: 150px;
 }
 
 .searchBar input {
