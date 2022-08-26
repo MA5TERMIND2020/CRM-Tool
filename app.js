@@ -47,7 +47,7 @@ mongoose.connect('mongodb://0.0.0.0:27017/crm', {
   }));
 
   //Checks to see if the user is authentcated by the server
-  const isAuth = (req, res, next) => {
+  var isAuth = (req, res, next) => {
     if(req.session.isAuth) {
       next()
     } else {
@@ -112,13 +112,10 @@ app.get('/about-us', (req, res) => {
 // this is just for designing purposes,
 // must be deleted once deployed because dashboard must depend on who was logged in
 app.get('/dashboard', isAuth, (req, res) => {
-  res.render('dashboard');
+  console.log(req.session)
+  res.render('dashboard', {user: req.session.person});
 })
 
-app.post('/dashboard', (req, res) => {
-  console.log('you are logged in')
-  res.render('dashboard');
-})
 
 app.post('/logout', (req, res) => {
   req.session.destroy((err) => {

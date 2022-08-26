@@ -4,10 +4,20 @@ const router = express.Router();
 // require model database
 const Customer = require('../models/customer');
 
-router.get('/', async (req, res) => {
+var isAuth = (req, res, next) => {
+  if(req.session.isAuth) {
+    next()
+  } else {
+    res.redirect('/')
+  }
+}
+
+router.get('/', isAuth, async (req, res) => {
   const customers = await Customer.find({});
   res.render('pages/customers/index', {customers});
 })
+
+
 
 router.get('/new', (req, res) => {
   res.render('pages/customers/new');

@@ -118,7 +118,7 @@ i {
   top: 60px;
   left: 0;
   bottom: 20px;
-  width: 100px;
+  width: 40px;
   border-radius: 10px;
   box-sizing: initial;
   border-left: 5px solid var(--color-secondary);
@@ -255,6 +255,9 @@ i {
   background-color: transparent;
   color: #1c3879;
   font-size: 34px;
+}
+
+#close-outline {
   display: none;
 }
 
