@@ -115,10 +115,10 @@ i {
 
 .navigation {
   position: fixed;
-  top: 60px;
+  top: 45px;
   left: 0;
-  bottom: 20px;
-  width: 40px;
+  bottom: 45px;
+  width: 45px;
   border-radius: 10px;
   box-sizing: initial;
   border-left: 5px solid var(--color-secondary);
@@ -131,7 +131,7 @@ i {
 }
 .navigation ul {
   position: absolute;
-  top: 0;
+  top: 1rem;
   left: 0;
   width: 100%;
   padding-left: 5px;
@@ -206,9 +206,7 @@ i {
   line-height: 60px;
   text-align: center;
 }
-.navigation ul li a .icon ion-icon {
-  font-size: 1.5em;
-}
+
 .navigation ul li a .title {
   position: relative;
   display: block;
@@ -219,7 +217,7 @@ i {
 .toggle {
   /*position: fixed;*/
   top: 60px;
-  left: 30px; 
+  left: 30px;
   width: 50px;
   height: 50px;
   background: transparent;
@@ -230,24 +228,6 @@ i {
   justify-content: center;
   align-items: center;
 }
-.toggle.active {
-  background-color: grey;
-  color: white;
-}
- .toggle ion-icon {
-  position: absolute;
-  color: #1c3879;
-  font-size: 34px;
-  display: none;
-}
-.toggle ion-icon.open,
-.toggle.active ion-icon.close {
-  display: block;
-}
-.toggle ion-icon.close,
-.toggle.active ion-icon.open {
-  display: none;
-} 
 
 #menu-outline, #close-outline {
   position: absolute;
@@ -258,6 +238,14 @@ i {
 
 #close-outline {
   display: none;
+}
+
+.toggle.active {
+  background-color: transparent;
+}
+
+.toggle.active #menu-outline {
+  color: #333;
 }
 
 .toggle i.open,
