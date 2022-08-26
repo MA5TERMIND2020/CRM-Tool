@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+var person;
 
 const isAuth = (req, res, next) => {
   if(req.session.isAuth) {
@@ -37,11 +38,16 @@ router.post('/login', async (req, res) => {
     const user = await Users.find({email: req.body.user.email});
       if (user.length != 1) {
         console.log("User Not Found");
+      
         //if (hashedPassword == user[0].password) {
           //res.redirect('/dashboard')
         //}
         res.render ("login", {error: "An error occured"}); return
-      }
+      } else {
+      person = user[0].name;
+      console.log (person);
+      req.session.person = person
+    }
     //console.log (userData);
       
       bcrypt.compare(req.body.user.password, user[0].password, function(error, result)
@@ -53,4 +59,4 @@ router.post('/login', async (req, res) => {
   }
 })
 
-module.exports = router;
+module.exports = router

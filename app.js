@@ -54,8 +54,6 @@ mongoose.connect('mongodb://0.0.0.0:27017/crm', {
       res.redirect('/')
     }
   }
-  
-  
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
@@ -120,6 +118,13 @@ app.get('/dashboard', isAuth, (req, res) => {
 app.post('/dashboard', (req, res) => {
   console.log('you are logged in')
   res.render('dashboard');
+})
+
+app.post('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if(err) throw err;
+    res.redirect('/');
+  });
 })
 
 app.all('*', (req, res, next) => { // * means for any kind of path
