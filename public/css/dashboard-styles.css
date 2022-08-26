@@ -115,9 +115,9 @@ i {
 
 .navigation {
   position: fixed;
-  top: 45px;
+  top: 52px;
   left: 0;
-  bottom: 45px;
+  bottom: 52px;
   width: 45px;
   border-radius: 10px;
   box-sizing: initial;

@@ -1,33 +1,12 @@
 <header class="navbar navbar-expand-lg navbar-dark primary-color fixed-top shadow py-0">
-  <div class="container-fluid">
-    <a class="navbar-brand h3 border-end px-3 mx-0" href="/dashboard">
+  <div class="container-fluid py-2">
+    <a class="navbar-brand h3 border-end px-3 mb-0" href="/dashboard">
       WorkSmart</a>
-    <!-- <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#toggeler-bt"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
-    <div class="d-flex justify-content-between">
-      
-      <div>
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row">
-          <!--
-          <li class="nav-item">
-            <button title="Settings" class="nav-link" href="#"><i class="fa-solid fa-gear"></i></button>
-          </li>-->
-          <form action="/logout" method="POST">
-          <li class="nav-item">
-            <button class="nav-link"><strong>Logout</strong></button>
-          </li>
-          </form>
-        </ul>
-      </div>
+    <div class="d-flex align-items-center flex-end h6 mb-0">
+      <a class="btn nav-link px-3" href="#">Settings</a>
+      <form action="/logout" method="POST">
+        <button class="btn nav-link px-3">Logout</button>
+      </form>
     </div>
   </div>
 </header>
