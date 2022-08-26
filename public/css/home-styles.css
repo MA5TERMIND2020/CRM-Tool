@@ -44,7 +44,7 @@ body {
   height: 90vh;
 }
 .header {
-  padding: 10rem;
+  padding: 5rem;
 }
 
 .Register {
@@ -62,7 +62,6 @@ body {
 /* features */
 
 #features {
-  margin-top: 20rem;
   padding: 7% 15%;
 }
 
