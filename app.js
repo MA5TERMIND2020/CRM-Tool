@@ -112,6 +112,10 @@ app.get('/dashboard', isAuth, (req, res) => {
   res.render('dashboard', {user: req.session.person});
 })
 
+app.get('/dashboard/reports', (req, res) => {
+  res.render('testing');
+})
+
 
 app.post('/logout', (req, res) => {
   req.session.destroy((err) => {

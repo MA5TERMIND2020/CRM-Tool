@@ -1,51 +1,31 @@
-const showOrders = document.getElementById('showOrders');
-const priceArray = [];
 
-const addOrder = (name, price) => {
-this.name = name;
-this.price = price;
-addToList(this.name, this.price);
-}
-
-const addToList = (name, price) => {
-// console.log(priceArray);
-let amount = 1;
-const orderEl = document.createElement('div');
-orderEl.classList.add('order-row');
-orderEl.innerHTML = `
-    <div class="product-title">
-    <i class="fa fa-times-circle"></i>
-    <span>${this.name}</span>
-    </div>
-    <div class="cost">$${this.price},00</div>
-    <div class="quantity">
-      <i class="fa fa-chevron-circle-left"></i>
-      <span>${amount}</span>
-      <i class="fa fa-chevron-circle-right"></i>
-    </div>
-    <div class="total">
-      $${price * amount},00
-    </div>
-    `;
-
-showOrders.appendChild(orderEl);
-
-priceArray.push(price);
-totalAmount();
-}
-
-// const totalPrice = (arr) => {
-//   let sum = 0;
-//     for (let i = 0; i < arr.length; i++) {
-//       sum += arr[i];
-//     }
-//     return sum;
-//     console.log(sum);
-// }
-
-const totalAmount = () => {
-  const totalPrice = document.getElementById('totalprice');
-  totalPrice.innerText = priceArray.length;
-  // priceArray.reduce((total, price) => total + price);
-  console.log(priceArray)
-}
+const ctx = document.getElementById('myChart');
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: 'item price',
+            data: [12, 19, 3, 5, 2, 3],
+            borderColor: [
+                'rgba(255, 99, 132, 1)'
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 'selling price',
+            data: [15, 21, 5, 7, 8, 6],
+            borderColor: [
+                'rgba(54, 162, 235, 1)'
+                ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
