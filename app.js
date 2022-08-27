@@ -16,8 +16,6 @@ const userRoutes = require('./routes/user');
 const productRoutes = require('./routes/products');
 const supplierRoutes = require('./routes/supplier');
 const customerRoutes = require('./routes/customer');
-const purchaseRoutes = require('./routes/purchase');
-const saleRoutes = require('./routes/sale')
 
 mongoose.connect('mongodb://0.0.0.0:27017/crm', {
   useNewUrlParser: true,
@@ -89,8 +87,6 @@ app.use('/users', userRoutes);
 app.use('/dashboard/products', productRoutes);
 app.use('/dashboard/suppliers', supplierRoutes);
 app.use('/dashboard/customers', customerRoutes);
-app.use('/dashboard/purchases', purchaseRoutes);
-app.use('/dashboard/sales', saleRoutes);
 
 // show routes for REGULAR PAGES
 app.get('/', (req, res) => {
