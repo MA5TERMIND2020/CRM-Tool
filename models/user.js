@@ -14,7 +14,25 @@ email: {
 password: {
     type: String,
     required: true
-} 
+},
+company: {
+    type: String,
+    required: true
+},
+address: {
+    type: String,
+    required: true
+},
+tel: {
+    type: String,
+    required: true
+},
+website: {
+    type: String
+},
+logo: {
+    type: String,
+}
  })
 
  const Users = mongoose.model("Users", userSchema)
