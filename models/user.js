@@ -28,8 +28,7 @@ tel: {
     required: true
 },
 website: {
-    type: String,
-    required: true
+    type: String
 },
 logo: {
     type: String,

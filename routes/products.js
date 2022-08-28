@@ -11,6 +11,26 @@ router.get('/', async (req, res) => {
   res.render('pages/products/index', {products, categories, messages: req.flash('success')});
 })
 
+router.get('/reports', async (req, res) => {
+  const data = await Product.find({});
+  let itemPrice = [];
+  let names = [];
+  let soldPrice = [];
+  const generatePrice = () => {
+    for (let i = 0; i < data.length; i++) {
+      itemPrice.push(data[i].itemCost);
+      names.push(data[i].name);
+      soldPrice.push(data[i].sellingPrice);
+    }
+  }
+  generatePrice();
+  res.render('testing', {itemPrice, names, soldPrice});
+})
+
+// router.get('/reports', async (req, res) => {
+//   res.render('testing');
+// })
+
 router.get('/new', async (req, res) => {
   const product = await Product.find({})
   const suppliers = await Supplier.find({}, {"name":1});

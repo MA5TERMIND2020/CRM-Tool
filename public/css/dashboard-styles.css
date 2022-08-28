@@ -26,6 +26,11 @@
   --box-shadow-small: 1px 1px 5px 1px grey;
 }
 
+fieldset {
+  background-color: var(--color-secondary);
+  border-top-right-radius: 30%;
+  border-bottom-left-radius: 30%;
+}
 body {
   color: var(--color-font);
   font-size: 0.9rem;

@@ -11,6 +11,7 @@ const MongoDBSession = require('connect-mongodb-session')(session);
 const flash = require('connect-flash'); //
 const Joi = require('joi'); // for validation
 const ExpressError = require('./utilities/ExpressError'); // for errors
+const Product = require('./models/products');
 // require routes USER, PRODUCT, CUSTOMER, SUPPLIER
 const userRoutes = require('./routes/user');
 const productRoutes = require('./routes/products');
@@ -107,15 +108,27 @@ app.get('/about-us', (req, res) => {
 
 // this is just for designing purposes,
 // must be deleted once deployed because dashboard must depend on who was logged in
-app.get('/dashboard', isAuth, (req, res) => {
-  console.log(req.session)
-  res.render('dashboard', {user: req.session.person});
+app.get('/dashboard', isAuth, async (req, res) => {
+  const data = await Product.find({});
+  let itemPrice = [];
+  let names = [];
+  let soldPrice = [];
+  const generatePrice = () => {
+    for (let i = 0; i < data.length; i++) {
+      itemPrice.push(data[i].itemCost);
+      names.push(data[i].name);
+      soldPrice.push(data[i].sellingPrice);
+    }
+  }
+  generatePrice();
+  // res.render('testing', {});
+  res.render('dashboard', {user: req.session.person, itemPrice, names, soldPrice});
 })
 
-app.get('/dashboard/reports', (req, res) => {
-  res.render('testing');
-})
-
+// app.get('/dashboard/reports', (req, res) => {
+//   const data = Product.find()
+//   res.send(data);
+// })
 
 app.post('/logout', (req, res) => {
   req.session.destroy((err) => {
