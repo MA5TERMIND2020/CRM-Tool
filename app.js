@@ -12,6 +12,7 @@ const flash = require('connect-flash'); //
 const Joi = require('joi'); // for validation
 const ExpressError = require('./utilities/ExpressError'); // for errors
 const Product = require('./models/products');
+const User = require('./models/user');
 // require routes USER, PRODUCT, CUSTOMER, SUPPLIER
 const userRoutes = require('./routes/user');
 const productRoutes = require('./routes/products');
@@ -106,8 +107,6 @@ app.get('/about-us', (req, res) => {
   res.render('about-us');
 });
 
-// this is just for designing purposes,
-// must be deleted once deployed because dashboard must depend on who was logged in
 app.get('/dashboard', isAuth, async (req, res) => {
   const data = await Product.find({});
   let itemPrice = [];
@@ -121,14 +120,8 @@ app.get('/dashboard', isAuth, async (req, res) => {
     }
   }
   generatePrice();
-  // res.render('testing', {});
-  res.render('dashboard', {user: req.session.person, itemPrice, names, soldPrice});
+  res.render('dashboard', {user:req.session.person, itemPrice, names, soldPrice});
 })
-
-// app.get('/dashboard/reports', (req, res) => {
-//   const data = Product.find()
-//   res.send(data);
-// })
 
 app.post('/logout', (req, res) => {
   req.session.destroy((err) => {

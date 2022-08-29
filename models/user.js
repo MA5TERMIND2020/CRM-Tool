@@ -30,7 +30,7 @@ tel: {
 website: {
     type: String
 },
-logo: {
+img: {
     type: String,
 }
  })

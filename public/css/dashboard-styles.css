@@ -27,9 +27,10 @@
 }
 
 fieldset {
-  background-color: var(--color-secondary);
-  border-top-right-radius: 30%;
-  border-bottom-left-radius: 30%;
+  /* background-color: var(--color-secondary); */
+  border: 1px solid grey;
+  /* border-top-right-radius: 30%; */
+  /* border-bottom-left-radius: 30%; */
 }
 body {
   color: var(--color-font);
@@ -49,7 +50,7 @@ body {
 
 .height {
   /*reusable class. be careful changing it */
-  min-height: 90vh;
+  min-height: 88vh;
   max-height: auto;
 }
 /* --------------- DASHBOARD NAVBAR------------ */
@@ -77,11 +78,33 @@ i {
 }
 
 /* --------------- DASHBOARD Results PAGE ------------ */
+.user-gradient {
+  background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+height: 120px;
+}
 
-.img-container {
-  width: 8rem;
-  height: 8rem;
-  margin: 0 0 1rem;
+.circle {
+  position: relative;
+  margin-top: -5rem;
+  margin-left: 17%;
+  background-color: white;
+  width: 65%;
+  height: auto;
+  border-radius: 50%;
+  border: 8px solid var(--color-body);
+  overflow: hidden;
+}
+
+.list-group-container {
+  margin-top: -6rem;
+  padding-top: 7rem;
+  overflow: hidden;
+}
+
+.list-group {
+  border: none; !important
 }
 .date,
 .hi-user {
@@ -123,7 +146,7 @@ i {
   position: fixed;
   top: 52px;
   left: 0;
-  bottom: 52px;
+  bottom: 66px;
   width: 150px;
   border-radius: 10px;
   box-sizing: initial;
@@ -208,7 +231,6 @@ i {
   position: relative;
   display: block;
   min-width: 35px;
-  /* height: 60px; */
   line-height: 60px;
   text-align: center;
 }
@@ -217,9 +239,9 @@ i {
   position: relative;
   display: block;
   padding-left: 1rem;
-  /* margin-top: 20px; */
   line-height: 60px;
 }
+
 .toggle {
   /*position: fixed;*/
   top: 60px;
@@ -262,6 +284,13 @@ i {
 .toggle.active i.open {
   display: none;
 }
+/* --------------- DASHBOARD MAIN PAGE ---------------*/
+
+.user-icon {
+  width: 35px;
+  color: var(--color-secondary-d);
+}
+
 
 /* --------------- PRODUCTS PAGE ---------------*/
 
