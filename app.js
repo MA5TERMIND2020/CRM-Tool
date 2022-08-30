@@ -114,15 +114,17 @@ app.get('/dashboard', isAuth, async (req, res) => {
   let itemPrice = [];
   let names = [];
   let soldPrice = [];
+  let stock = [];
   const generatePrice = () => {
     for (let i = 0; i < data.length; i++) {
       itemPrice.push(data[i].itemCost);
       names.push(data[i].name);
       soldPrice.push(data[i].sellingPrice);
+      stock.push(data[i].currentStock);
     }
   }
   generatePrice();
-  res.render('dashboard', {user, itemPrice, names, soldPrice});
+  res.render('dashboard', {user, itemPrice, names, soldPrice, stock});
 })
 
 app.get('/dashboard/account', isAuth, async(req, res) => {

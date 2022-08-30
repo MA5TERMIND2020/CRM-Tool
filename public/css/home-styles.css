@@ -19,7 +19,7 @@
   --color-font: #353535;
 
   /* box shadow */
-  --box-shadow: 3px 3px 10px 3px grey;
+  --box-shadow: 3px 3px 10px 3px #28282B;
   --box-shadow-small: 1px 1px 5px 1px grey;
 }
 
@@ -40,28 +40,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: var(--color-font);
   font-size: 0.9rem;
 }
 
-/* ------- Hompepage ---------------- */
-
-.header {
-  padding: 5rem;
-  text-align: center;
-  line-height: 2.5rem;
-  letter-spacing: 10px;
-  margin-top: 15rem;
-}
-.underline{
-  text-decoration: underline;
-}
-.Register {
-  background-color: white;
-  color: blue;
-  margin-top: 3rem;
-  letter-spacing: 0;
-}
 .padding {
   padding: 1rem 3rem;
 }
@@ -69,6 +52,51 @@ body {
 .primary-color {
   background-color: var(--color-primary);
   color: white;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+/* ------- Hompepage ---------------- */
+
+.header {
+  /* padding: 5rem; */
+  text-align: center;
+  line-height: 2.5rem;
+  letter-spacing: 10px;
+  margin-top: 15rem;
+}
+
+.header h1, h3 {
+  color: white;
+}
+
+.bg-inner {
+  position: relative;
+  width: 100%;
+  height: 20rem;
+  background-color: transparent;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  transition: .5s ease;
+  opacity: 1;
+}
+
+.text {
+  position: absolute;
+  color: #e4e2e2;
+  font-size: 5rem;
+  top: 40%;
+  left: 32%;
+  transition: all 0.5s ease-in-out;
 }
 /* features */
 
@@ -97,9 +125,16 @@ body {
 
 .feature-box-p {
   margin: 5%;
-  /* margin: 8rem 10rem; */
 }
 
+
+.Register {
+  background-color: white;
+  color: blue;
+  margin-top: 3rem;
+  letter-spacing: 0;
+}
+/* ------------- ABOUT PAGE -------------- */
 .aboutus-background {
   margin: 8rem 10rem;
   background-color: rgba(16, 30, 39, 0.7);
@@ -131,11 +166,13 @@ body {
   color: var(--color-font);
   border-radius: 10px;
   box-shadow: var(--box-shadow);
+  overflow: hidden;
 }
 /* ------------- FORMS -------------- */
 .btn-gradient {
   background: #00bf8f;
   background: linear-gradient(to top, #38a3a5, #1a3040);
+  color: white;
 }
 
 .submitBtn {

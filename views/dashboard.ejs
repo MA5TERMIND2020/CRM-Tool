@@ -2,7 +2,7 @@
 
 <!-- RIGHT DASHBOARD RESULTS -->
 
-<div class="row mr-0 py-0">
+<div class="row py-0 gx-2">
   <div class="col-5 rounded white">
     <canvas id="myChart" width="100" height="100">
     </canvas>
@@ -73,14 +73,16 @@
       datasets: [{
           label: 'item price',
           data: [ <%= itemPrice %> ],
+          backgroundColor: '#6ca538',
           borderColor: [
-            'rgba(255, 99, 132, 1)'
+            '#6ca538'
           ],
           borderWidth: 1
         },
         {
           label: 'selling price',
           data: [ <%= soldPrice %> ],
+          backgroundColor: 'rgba(54, 162, 235, 1)',
           borderColor: [
             'rgba(54, 162, 235, 1)'
           ],
@@ -89,6 +91,12 @@
       ]
     },
     options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Cost & Selling Price Comparison'
+        }
+      },
       scales: {
         y: {
           beginAtZero: true
@@ -104,17 +112,34 @@
       labels: <%- JSON.stringify(names) %> ,
       datasets: [{
           label: 'Amount of Products',
-          data: [ <%= itemPrice %> ],
+          data: [ <%= stock %> ],
+          backgroundColor: '#6ca538',
           borderColor: [
-            'rgba(255, 99, 132, 1)'
+            '#6ca538'
           ],
           borderWidth: 1
         }
       ]
     },
     options: {
+      indexAxis: 'y',
+      elements: {
+        bar: {
+          borderWidth: 1,
+        }
+      },
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+        },
+        title: {
+          display: true,
+          text: 'Inventory'
+        }
+      },
       scales: {
-        y: {
+        x: {
           beginAtZero: true
         }
       }
