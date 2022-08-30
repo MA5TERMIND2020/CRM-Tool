@@ -132,11 +132,13 @@ app.get('/dashboard/account', isAuth, async(req, res) => {
 })
 
 
-app.put('/dashboard', async(req, res) => {
-  const {person } = req.session;
-  const updatedUser = await User.findByIdAndUpdate(id, { ...req.body.user })
+app.put('/dashboard/account/:id', isAuth, async(req, res) => {
+  const {id } = req.params;
+  const updatedUser = await User.findByIdAndUpdate(id, { ...req.body.user });
+  // const updatedUser = await User.findOneAndUpdate({ 'name' : person}, { ...req.body.user })
   req.flash('success', 'Successfully updated your account.')
   res.redirect('/dashboard');
+  // res.send(updatedUser);
 })
 
 app.post('/logout', (req, res) => {
