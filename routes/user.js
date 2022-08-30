@@ -38,7 +38,7 @@ router.post('/login', async (req, res) => {
     const user = await Users.find({email: req.body.user.email});
       if (user.length != 1) {
         console.log("User Not Found");
-      
+
         //if (hashedPassword == user[0].password) {
           //res.redirect('/dashboard')
         //}
@@ -48,11 +48,12 @@ router.post('/login', async (req, res) => {
       console.log (person);
       req.session.person = person
     }
-    //console.log (userData);
-      
+    // console.log('testing', user);
+
       bcrypt.compare(req.body.user.password, user[0].password, function(error, result)
-      { if (result) {req.session.isAuth = true; res.render ('dashboard', {user: person}); return;}
-        else { console.log("Invalid Password"); res.render ("login", {error: "An error occured"}); return}})  
+            { if (result) {req.session.isAuth = true; res.redirect('/dashboard'); return;}
+      // { if (result) {req.session.isAuth = true; res.render ('dashboard', {user:person}); return;}
+        else { console.log("Invalid Password"); res.render ("login", {error: "An error occured"}); return}})
     }
   catch (error) {
     console.log (error)

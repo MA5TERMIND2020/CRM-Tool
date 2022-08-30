@@ -108,6 +108,8 @@ app.get('/about-us', (req, res) => {
 });
 
 app.get('/dashboard', isAuth, async (req, res) => {
+  const {person } = req.session;
+  const user = await User.findOne({name: person});
   const data = await Product.find({});
   let itemPrice = [];
   let names = [];
@@ -120,7 +122,21 @@ app.get('/dashboard', isAuth, async (req, res) => {
     }
   }
   generatePrice();
-  res.render('dashboard', {user:req.session.person, itemPrice, names, soldPrice});
+  res.render('dashboard', {user, itemPrice, names, soldPrice});
+})
+
+app.get('/dashboard/account', isAuth, async(req, res) => {
+  const {person } = req.session;
+  const user = await User.findOne({name: person});
+  res.render('pages/user/edit', {user});
+})
+
+
+app.put('/dashboard', async(req, res) => {
+  const {person } = req.session;
+  const updatedUser = await User.findByIdAndUpdate(id, { ...req.body.user })
+  req.flash('success', 'Successfully updated your account.')
+  res.redirect('/dashboard');
 })
 
 app.post('/logout', (req, res) => {

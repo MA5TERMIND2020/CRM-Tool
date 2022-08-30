@@ -12,27 +12,31 @@
 
 <div class="white rounded p-3">
 <h1 class="mb-3">Add a Supplier</h1>
-<form class="reg-form p-3 border" action="/dashboard/suppliers" method="POST">
-  <div class="mb-2">
+<div class="d-flex justify-content-center">
+<form class="reg-form border" action="/dashboard/suppliers" method="POST">
+  <div class="mb-3">
   <label for="name" class="form-label">Supplier Name</label>
-  <input type="text" class="form-control" name="supplier[name]" id="name" placeholder="Supplier name">
+  <input type="text" name="supplier[name]" id="name" placeholder="Supplier name">
   </div>
 
-  <div class="mb-2">
+  <div class="mb-3">
   <label for="tel" class="form-label">Phone Number</label>
-  <input type="tel" class="form-control" name="supplier[tel]" id="tel">
+  <input type="tel" name="supplier[tel]" id="tel">
   </div>
 
-  <div class="mb-2">
+  <div class="mb-3">
   <label for="email" class="form-label">Email</label>
-  <input type="email" class="form-control" name="supplier[email]" id="email">
+  <input type="email" name="supplier[email]" id="email">
   </div>
 
   <div class="mb-5">
   <label for="address" class="form-label">Address</label>
-  <input type="text" class="form-control" name="supplier[address]" id="address" placeholder="Address">
+  <input type="text" name="supplier[address]" id="address" placeholder="Address">
   </div>
 
-  <button class="btn btn-primary btn-sm">Submit</button>
+    <button class="submitBtn btn-gradient py-2">Submit</button>
+
+
 </form>
+</div>
 </div>

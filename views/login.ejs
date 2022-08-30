@@ -40,26 +40,27 @@
     </nav>
 <!--**********  MAIN SECTION ***********-->
 <section class="container-fluid height d-flex justify-content-center align-items-center">
-<div class="login-inner py-3 px-4">
+<div class="login-inner mt-5">
+  <div class="p-4 btn-gradient">
   <h1 class="text-center mb-3">Login Here</h1>
-
+</div>
 
   <div class="errors"><% if (error) { %>
     <h4 class="errors">Invalid Credentials</h4>
 <% } %>
 
 
-<form action="/users/login" method="POST" novalidate>
+<form class="px-4 py-3" action="/users/login" method="POST" novalidate>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
       <input type="email" class="form-control" name="user[email]" id="exampleInputEmail1" aria-describedby="emailHelp">
       <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
     </div>
-    <div class="mb-3">
+    <div class="mb-5">
       <label for="exampleInputPassword1" class="form-label">Password</label>
       <input type="password" class="form-control" name="user[password]" id="exampleInputPassword1">
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="submit" class="submitBtn btn-gradient py-2">Login</button>
   </form>
 </div>
 

@@ -12,38 +12,39 @@
 
 <div class="white rounded p-3">
 <h1 class="mb-3">Add New Product</h1>
-<form class="reg-form p-3 border mb-3" action="/dashboard/products" method="POST">
-  <div class="mb-2">
+<div class="d-flex justify-content-center">
+<form class="reg-form border mb-3" action="/dashboard/products" method="POST">
+  <div class="mb-3">
   <label for="name" class="form-label">Name</label>
-  <input type="text" class="form-control" name="name" id="name" placeholder="name">
+  <input type="text" name="name" id="name" placeholder="name">
   </div>
 
-  <div class="mb-2">
+  <div class="mb-3">
   <label for="intensity" class="form-label">Intensity</label>
-  <input type="text" class="form-control" name="intensity" id="intensity" placeholder="">
+  <input type="text" name="intensity" id="intensity" placeholder="">
   </div>
 
-  <div class="mb-2">
+  <div class="mb-3">
   <label for="weight" class="form-label">Weight</label>
-  <input type="text" class="form-control" name="weight" id="weight" placeholder="">
+  <input type="text" name="weight" id="weight" placeholder="">
   </div>
 
-  <div class="mb-2">
+  <div class="mb-3">
   <label for="price" class="form-label">Item Cost</label>
-  <input type="number" class="form-control" name="itemCost" id="itemCost" placeholder="">
+  <input type="number" name="itemCost" id="itemCost" placeholder="">
   </div>
 
-  <div class="mb-2">
+  <div class="mb-3">
   <label for="price" class="form-label">Selling Price</label>
-  <input type="number" class="form-control" name="sellingPrice" id="sellingPrice" placeholder="">
+  <input type="number"  name="sellingPrice" id="sellingPrice" placeholder="">
   </div>
 
-  <div class="mb-2">
+  <div class="mb-3">
   <label for="price" class="form-label">Current Stock</label>
-  <input type="number" class="form-control" name="currentStock" id="currentStock" placeholder="">
+  <input type="number" name="currentStock" id="currentStock" placeholder="">
   </div>
 
-  <div class="mb-2">
+  <div class="mb-3">
       <label for="category" class="form-label">Category</label>
       <select id="category" class="form-select" name="category">
         <% for (let category of categories) { %>
@@ -52,7 +53,7 @@
       </select>
     </div>
 
-    <div class="mb-3">
+    <div class="mb-5">
         <label for="supplier" class="form-label">Supplier</label>
         <select id="supplier" class="form-select" name="supplier">
           <% for (let supplier of suppliers) {%>
@@ -61,6 +62,7 @@
         </select>
       </div>
 
-  <button class="btn btn-primary btn-sm">Submit</button>
+  <button class="submitBtn btn-gradient py-2">Submit</button>
 </form>
+</div>
 </div>

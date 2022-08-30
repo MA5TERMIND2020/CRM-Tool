@@ -3,9 +3,14 @@
 <!-- RIGHT DASHBOARD RESULTS -->
 
 <div class="d-flex justify-content-between px-3 py-0">
+  <div class="right border-round white">
+    <canvas id="myChart" width="300" height="100">
+    </canvas>
+  </div>
+
   <div class="left">
     <!-- <div class="d-flex justify-content-center align-items-center"> -->
-    <div class="user-gradient rounded">
+    <div class="gradient rounded user-background">
       </div>
       <div class="circle">
         <img src="/images/female.png" alt="user-image" class="img-fluid" />
@@ -15,41 +20,38 @@
       <ul class="list-group list-group-flush">
         <!-- name -->
         <li class="list-group-item text-center">
-          <span class="">Lala Gwapa</span>
+          <span class=""><%=user.name%></span>
         </li>
         <li class="list-group-item"><!-- email -->
           <span class="user-icon"><i class="fa-solid fa-envelope-open-text">
           </i></span>
-          <span class="px-3">stuff goes here</span>
+          <span class="px-3"><%=user.email %></span>
         </li>
         <!-- company -->
         <li class="list-group-item">
           <span class="user-icon"><i class="fa-solid fa-building"></i></span>
-          <span class="px-3">stuff goes here</span>
+          <span class="px-3"><%=user.company %></span>
         </li>
         <!-- website -->
         <li class="list-group-item">
           <span class="user-icon"><i class="fa-solid fa-globe"></i></span>
-          <span class="px-3">stuff goes here</span>
+          <span class="px-3"><%=user.website %></span>
         </li>
         <!-- address -->
         <li class="list-group-item">
           <span class="user-icon"><i class="fa-solid fa-signs-post"></i></span>
-          <span class="px-3">stuff goes here</span>
+          <span class="px-3"><%=user.address %></span>
         </li>
         <!-- tel -->
         <li class="list-group-item">
           <span class="user-icon"><i class="fa-solid fa-phone"></i></span>
-          <span class="px-3">stuff goes here</span>
+          <span class="px-3"><%=user.tel %></span>
         </li>
       </ul>
     </div>
   </div>
 
-  <div class="right border-round white">
-    <canvas id="myChart" width="300" height="100">
-    </canvas>
-  </div>
+
 
 </div>
 

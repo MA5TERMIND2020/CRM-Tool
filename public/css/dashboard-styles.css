@@ -17,7 +17,6 @@
   --color-secondary: #38a3a5;
   --color-secondary-d: #3c6e71;
   --color-body: #ececec;
-   /* #F0FFF0; */
   --color-input: #F5FFFA;
   --color-font: #353535;
 
@@ -53,6 +52,13 @@ body {
   min-height: 88vh;
   max-height: auto;
 }
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-secondary-d);
+}
+
 /* --------------- DASHBOARD NAVBAR------------ */
 
 .nav-item {
@@ -78,13 +84,15 @@ i {
 }
 
 /* --------------- DASHBOARD Results PAGE ------------ */
-.user-gradient {
-  background: #0F2027;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-height: 120px;
+.gradient {
+  background: #00bf8f;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #44c3c5, #38a3a5,  #1a3040);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #44c3c5, #38a3a5, #1a3040); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.user-background {
+    height: 120px;
+}
 .circle {
   position: relative;
   margin-top: -5rem;
@@ -305,79 +313,38 @@ height: 120px;
 .reg-form {
   width: 60%;
   border-radius: 10px;
+  padding: 2rem 10%;
 }
 
-/* --------------- PURCHASES PAGE ---------------*/
-.order-row {
-max-width: 900px;
-min-width: min-content;
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-/*can be 33% 33% 33% but will have column gaps
-grid-column-gaps: 40px;*/
-text-align: center;
-}
-
-#showOrders {
-  min-width: 150px;
-}
-
-.searchBar input {
-  margin: 0;
-  background-color: var(--color-input);
-  font-size: 1rem;
-  font-weight: lighter;
-  border: none;
-  width: 80%;
-  padding: 0.5rem;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border: 1px solid var(--color-body);
-}
-
-.searchIcon {
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  width: 20%;
-    background-color: var(--color-secondary);
-    margin: 0;
-    padding: 0.5rem 0.7rem;
-    border: 1px solid var(--color-secondary);
-    font-size: 1rem;
-    color: white;
-    cursor: pointer;
-}
-
-.addBtn {
-  border: none;
-  background-color: transparent;
-}
-
-.addBtn i {
-  color: green;
-}
-
-select, input {
+input {
+    display: block;
     margin-left: 0.5rem;
     background-color: var(--color-input);
     font-size: 1rem;
+    font-style: italic;
     font-weight: lighter;
-    width: 80%;
-    padding: 0.2rem;
-    border-radius: 3px;
-    border: 1px solid lightgrey;
+    width: 100%;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    border: none;
+    -webkit-box-shadow: inset 0 1px 0 #a5a5a5, 0 1px 1px 0 #1a3040;
+box-shadow: inset 0 1px 0 #a5a5a5, 0 1px 1px  #1a3040;
+    outline: none;
   }
 
-  .date-supplier button {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    width: 20%;
-      background-color: var(--color-body);
-      margin: 0;
-      padding: 0.2rem;
-      border: 1px solid var(--color-body);
-      font-size: 1rem;
-      color: darkgrey;
-      cursor: pointer;
+.btn-gradient {
+  background: #00bf8f;
+  background: linear-gradient(to top, #38a3a5, #1a3040);
+}
+
+.submitBtn {
+  display: block;
+  width: 50%;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }

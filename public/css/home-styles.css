@@ -132,6 +132,23 @@ body {
   border-radius: 10px;
   box-shadow: var(--box-shadow);
 }
+/* ------------- FORMS -------------- */
+.btn-gradient {
+  background: #00bf8f;
+  background: linear-gradient(to top, #38a3a5, #1a3040);
+}
+
+.submitBtn {
+  display: block;
+  width: 50%;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* --------------- FOOTER --------------------- */
 .copyrights {

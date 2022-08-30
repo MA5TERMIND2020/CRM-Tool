@@ -49,9 +49,12 @@
 
 <!--**********  MAIN SECTION ***********-->
 <section class="container-fluid d-flex justify-content-center align-items-center p-5">
-<div class="login-inner py-3 px-4 mt-5">
-  <h1 class="text-center mb-3">Get Started For Free!</h1>
-  <form action="/users/register" method="POST">
+<div class="login-inner mt-5">
+  <div class="p-4 btn-gradient">
+    <h1 class="text-center">Get Started For Free!</h1>
+  </div>
+
+  <form class="px-4 py-3" action="/users/register" method="POST">
     <div class="mb-3">
       <label for="name" class="form-label">Name</label>
       <input type="text" class="form-control" name="user[name]" id="name" aria-describedby="emailHelp">
@@ -81,11 +84,11 @@
       <label for="website" class="form-label">Website URL (optional)</label>
       <input type="url" class="form-control" name="user[website]" id="website">
     </div>
-    <div class="mb-3">
+    <div class="mb-5">
       <label for="logo" class="form-label">Logo (optional)</label>
       <input type="file" class="form-control" name="user[logo]" id="logo">
     </div>
-    <button type="submit" class="btn btn-primary">Register</button>
+    <button type="submit" class="submitBtn btn-gradient py-2">Register</button>
   </form>
 </div>
 
