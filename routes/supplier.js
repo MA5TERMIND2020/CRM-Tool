@@ -20,6 +20,7 @@ router.get('/:id', async (req, res) => {
     req.flash('error', 'No supplier found!');
     return res.redirect('/dashboard/suppliers');
   }
+  // res.send(supplier);
   res.render('pages/suppliers/show', {supplier});
 } )
 
