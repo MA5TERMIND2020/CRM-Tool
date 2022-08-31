@@ -10,10 +10,10 @@
 </nav>
 </div>
 <!-- MAIN -->
-<div class="white rounded p-3">
-<h1 class="mb-3">Edit a Customer</h1>
-<div class="d-flex justify-content-center">
-<form class="reg-form border" action="/dashboard/customers/<%=customer._id %>?_method=PUT" method="POST">
+<div class="white rounded p-3 d-flex justify-content-center">
+<div class="" style="width: 50%; min-width: 250px">
+  <h2 class="mb-5 text-center border-bottom">Edit a Customer</h2>
+<form class="" action="/dashboard/customers/<%=customer._id %>?_method=PUT" method="POST">
   <div class="mb-3">
   <label for="name" class="form-label">Customer Name</label>
   <input type="text" name="customer[name]" id="name"
@@ -32,7 +32,7 @@
   id="email" value="<%=customer.email%>">
   </div>
 
-  <div class="mb-5">
+  <div class="mb-3">
   <label for="address" class="form-label">Address</label>
   <input type="text" name="customer[address]"
   id="address" value="<%=customer.address%>" placeholder="Address">

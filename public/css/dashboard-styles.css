@@ -331,9 +331,9 @@ i {
 }
 
 .reg-form {
-  width: 60%;
+  width: 90%;
   border-radius: 10px;
-  padding: 2rem 10%;
+  padding: 1rem 10%;
 }
 
 input {
