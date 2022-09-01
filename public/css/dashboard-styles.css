@@ -10,6 +10,10 @@
 
 }
 
+*:focus {
+  outline: 0 !important;
+}
+
 /*********************************************** Utility Components  *************************************************/
 :root {
   /* Colors */
@@ -149,6 +153,9 @@ i {
 }
 
 /* sidebar */
+#sidebar-container {
+  min-width: 55px;
+}
 
 .navigation {
   position: fixed;
@@ -292,6 +299,8 @@ i {
 .toggle.active i.open {
   display: none;
 }
+/* ---------------charts ------------------ */
+
 /* --------------- DASHBOARD MAIN PAGE ---------------*/
 
 .user-icon {
@@ -311,14 +320,17 @@ i {
   width: 100%;
   height: 100%;
   transition: all 2s ease-in-out;
-  /* backface-visibility: hidden; */
   display: grid;
   justify-content: center;
   align-items: start;
   border-radius: 10px;
 }
 
-
+canvas {
+  width: 200;
+  height: 200;
+  padding: 1rem 0 1rem;
+}
 
 /* --------------- PRODUCTS PAGE ---------------*/
 
@@ -368,3 +380,14 @@ box-shadow: inset 0 1px 0 #a5a5a5, 0 1px 1px  #1a3040;
   margin-left: auto;
   margin-right: auto;
 }
+
+/* -------------------------------------- */
+
+ @media screen and (max-width: 768px) {
+   .navigation {
+       width: 45px;
+   }
+
+   .navigation.active {
+     width: 45px;
+   }
