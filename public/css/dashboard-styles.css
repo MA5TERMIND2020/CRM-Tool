@@ -23,6 +23,7 @@
   --color-secondary-d: #3c6e71;
   --color-body: #ececec;
   --color-input: #F5FFFA;
+  /* d9d9d9 */
   --color-font: #353535;
 
   /* box shadow */
@@ -39,7 +40,7 @@ fieldset {
 body {
   color: var(--color-font);
   font-family: 'Alegreya Sans', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   min-height: 100vh;
   background: var(--color-body);
 }
@@ -154,7 +155,7 @@ i {
   margin-right: 1rem;
 }
 
-/* sidebar */
+/* --------------- DASHBOARD SIDEBAR ------------ */
 #sidebar-container {
   min-width: 55px;
 }

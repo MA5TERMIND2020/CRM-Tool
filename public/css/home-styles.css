@@ -1,25 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
 
 /* Reset  */
-
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 /*********************************************** Utility Components  *************************************************/
 :root {
+  font-size: 18px;
   /* Colors */
   --color-primary: #284b63;
   --color-secondary: #38a3a5;
   --color-secondary-d: #3c6e71;
   --color-body: #d9d9d9;
   --color-font: #353535;
-
   /* box shadow */
   --box-shadow: 3px 3px 10px 3px #28282B;
   --box-shadow-small: 1px 1px 5px 1px grey;
@@ -28,14 +26,9 @@
 body {
   color: var(--color-font);
   font-family: 'Alegreya Sans', sans-serif;
-  letter-spacing: 1px;
-  font-size: 16px;
+  letter-spacing: 1.1px;
   min-height: 100vh;
-  background: #fff;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
- }
+}
 
 .background {
   background-color: var(--color-font);
@@ -48,6 +41,12 @@ body {
   font-size: 0.9rem;
 }
 
+.background-gradient {
+  background-color: #8EC5FC;
+  background: -webkit-linear-gradient(242deg, #8EC5FC 0%, #E0C3FC 100%);
+  background: linear-gradient(to left, #8EC5FC 0%, #E0C3FC 50%, #8EC5FC 100%);
+}
+
 .padding {
   padding: 1rem 3rem;
 }
@@ -57,12 +56,11 @@ body {
   color: white;
 }
 
-.underline{
+.underline {
   text-decoration: underline;
 }
 
 /* ------- Hompepage ---------------- */
-
 .header {
   /* padding: 5rem; */
   text-align: center;
@@ -101,8 +99,8 @@ body {
   left: 32%;
   transition: all 0.5s ease-in-out;
 }
-/* features */
 
+/* features */
 #features {
   padding: 7% 15%;
   margin-top: 15rem;
@@ -122,6 +120,7 @@ body {
   margin: 1rem 0;
   color: var(--color-primary);
 }
+
 .card-icon:hover {
   color: #0c0d0d;
 }
@@ -130,13 +129,13 @@ body {
   margin: 5%;
 }
 
-
 .Register {
   background-color: white;
   color: blue;
   margin-top: 3rem;
   letter-spacing: 0;
 }
+
 /* ------------- ABOUT PAGE -------------- */
 .aboutus-background {
   margin: 8rem 10rem;
@@ -153,8 +152,8 @@ body {
   color: #eee;
   z-index: 1;
 }
-/* ------------- LOGIN PAGE -------------- */
 
+/* ------------- LOGIN PAGE -------------- */
 .height {
   /*reusable class. be careful changing it */
   min-height: 90vh;
@@ -162,19 +161,29 @@ body {
 }
 
 .login-inner {
-  width: 35%;
-  min-width: 300px;
+  max-width: 100%;
+  min-width: 350px;
   height: min-content;
+  line-height: 0.8;
   background-color: white;
   color: var(--color-font);
   border-radius: 10px;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-small);
   overflow: hidden;
 }
+
+.login-inner-form label {
+  font-size: 0.8rem;
+  letter-spacing: 0.8;
+  font-weight: bold;
+  color: var(--color-secondary-d);
+  font-family: sans-serif;
+}
+
 /* ------------- FORMS -------------- */
 .btn-gradient {
-  background: #00bf8f;
-  background: linear-gradient(to top, #38a3a5, #1a3040);
+  background: #3c6e71;
+  background: linear-gradient(to top, #38a3a5 40%, #1a3040 100%);
   color: white;
 }
 
@@ -194,10 +203,16 @@ body {
 .copyrights {
   text-align: center;
   color: #d9dcd6;
-  padding-top: 1rem;
-
 }
 
 .footer-icon {
-  margin: 0 1rem;
+  font-size: calc(1rem + 0.6667vw);;
+  transition: color 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-link:hover,
+.nav-link:active,
+.footer-icon:hover,
+.footer-icon:active {
+  color: var(--color-secondary);
 }
