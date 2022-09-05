@@ -31,12 +31,6 @@
   --box-shadow-small: 1px 1px 5px 1px grey;
 }
 
-fieldset {
-  /* background-color: var(--color-secondary); */
-  border: 1px solid grey;
-  /* border-top-right-radius: 30%; */
-  /* border-bottom-left-radius: 30%; */
-}
 body {
   color: var(--color-font);
   font-family: 'Alegreya Sans', sans-serif;
@@ -58,6 +52,12 @@ body {
   /*reusable class. be careful changing it */
   min-height: 88vh;
   max-height: auto;
+}
+
+.nav-link {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
 }
 
 label {

@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router({mergeParams: true});
-
-// require model database
 const Supplier = require('../models/supplier');
 
 router.get('/', async (req, res) => {
@@ -20,7 +18,6 @@ router.get('/:id', async (req, res) => {
     req.flash('error', 'No supplier found!');
     return res.redirect('/dashboard/suppliers');
   }
-  // res.send(supplier);
   res.render('pages/suppliers/show', {supplier});
 } )
 

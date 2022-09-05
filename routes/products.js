@@ -27,10 +27,6 @@ router.get('/reports', async (req, res) => {
   res.render('testing', {itemPrice, names, soldPrice});
 })
 
-// router.get('/reports', async (req, res) => {
-//   res.render('testing');
-// })
-
 router.get('/new', async (req, res) => {
   const product = await Product.find({})
   const suppliers = await Supplier.find({}, {"name":1});
@@ -40,12 +36,11 @@ router.get('/new', async (req, res) => {
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const product = await Product.findById(id).populate('supplier');
-  // if (!product) {
-  //   req.flash('error', 'Cannot find that product!');
-  //   return res.redirect('/dashboard/products');
-  // }
-  // res.render('pages/products/show', {product});
-  res.send(product);
+  if (!product) {
+    req.flash('error', 'Cannot find that product!');
+    return res.redirect('/dashboard/products');
+  }
+  res.render('pages/products/show', {product});
 })
 
 router.get('/:id/edit', async (req, res) => {
