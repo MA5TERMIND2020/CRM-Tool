@@ -11,7 +11,7 @@
 </div>
 
 <div class="white rounded p-3 d-flex justify-content-center">
-  <div class="" style="width: 50%; min-width: 250px">
+  <div class="short-form-container">
 <h2 class="mb-5 text-center border-bottom">Edit Supplier</h2>
 <form action="/dashboard/suppliers/<%=supplier._id %>?_method=PUT" method="POST">
   <div class="mb-3">
@@ -29,7 +29,7 @@
   <input type="email" name="supplier[email]" value="<%=supplier.email%>" required>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-5">
   <label for="address" class="form-label">Address</label>
   <input type="text" name="supplier[address]" value="<%=supplier.address%>" required>
   </div>

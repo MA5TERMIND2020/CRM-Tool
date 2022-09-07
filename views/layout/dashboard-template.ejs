@@ -31,14 +31,17 @@
     <%- include ('../partials/dashboard-top')%>
 
   <!--**********  DASHBOARD SECTION *********-->
-  <section class="container-fluid">
-    <div class="row">
+  <section class="container-fluid" id="dashboard">
+    <div id="dashboard-container">
       <!-- LEFT DASHBOARD ICONS -->
-      <%- include('../partials/sidebar') %>
-      <div class="col-lg-1 col-md-2" id="sidebar-container"></div>
+      <!-- <div class="col-2 col-md-2" id="sidebar-container"> -->
+      <div class="sidebar-container">
+        <%- include('../partials/sidebar') %>
+      </div>
 
       <!-- RIGHT DASHBOARD RESULTS -->
-      <main class="dashboard-main height col-lg-11 col-md-10 mt-3 ml-1">
+      <!-- <main class="dashboard-main height col-10 col-md-10 mt-3"> -->
+      <main class="dashboard-main height mt-3">
         <%- include('../partials/flash') %>
         <%- body %>
       </main>

@@ -54,9 +54,16 @@ label {
 }
 
 /* --------------- FOOTER --------------------- */
+footer {
+  z-index: 2;
+}
+
 .copyrights {
   text-align: center;
   color: #d9dcd6;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  line-height: 10px;
 }
 
 .footer-icon {

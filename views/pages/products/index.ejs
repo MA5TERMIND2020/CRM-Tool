@@ -11,7 +11,7 @@
 
 <!-- MAIN -->
 <div class="white rounded p-3">
-  <h1 class="mb-5">Products</h1>
+  <h1 class="mb-3">Products</h1>
   <div class="d-flex justify-content-center align-items-center mb-3">
     <h5 class="px-3">Filter by:</h5>
     <button class="btn btn-primary btn-sm mx-2" data-bs-toggle="collapse"
@@ -25,8 +25,8 @@
       aria-controls="combo-pack">Combo Pack</button>
   </div>
 
-
-  <table class="table mb-5 rounded">
+  <div className="container-fluid">
+  <table class="table rounded">
     <thead class="table-light">
       <tr>
         <th scope="col"></th>
@@ -104,6 +104,7 @@
         <% } %>
   </tbody>
 </table>
+</div>
 
   <a class="btn btn-primary btn-sm"
   href="/dashboard/products/new">Add New Product</a>

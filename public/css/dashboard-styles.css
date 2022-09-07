@@ -12,66 +12,56 @@ body {
   max-height: auto;
 }
 
-/* --------------- DASHBOARD MAIN PAGE ------------ */
-.gradient {
-  background: #00bf8f;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #44c3c5, #38a3a5,  #1a3040);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #44c3c5, #38a3a5, #1a3040); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.breadcrumb-item {
+  font-size: 0.9rem;
+  line-height: 10px;
 }
 
-.user-background {
-    height: 120px;
-}
-.circle {
-  position: relative;
-  margin-top: -5rem;
-  margin-left: 17%;
-  background-color: white;
-  width: 65%;
-  height: auto;
-  border-radius: 50%;
-  border: 8px solid var(--color-body);
-  overflow: hidden;
+/* --------------- DASHBOARD SIDEBAR ------------ */
+section#dashboard {
+  padding: 0;
 }
 
-.list-group-container {
-  margin-top: -5rem;
-  padding-top: 5rem;
-  overflow: hidden;
+#dashboard-container {
+  display: grid;
+  grid-template-columns: 13% 85%;
+  grid-column-gap: 2%;
+  grid-template-areas:
+    "sidenav main";
 }
 
-.list-group {
-  border: none; !important
+.sidebar-container {
+  padding: 0;
+  grid-area: sidenav;
+    margin-top: 52px;
 }
 
 .dashboard-main {
   background-color: var(--color-body);
-  padding: 3rem 1rem 1rem 3rem;
-}
-
-/* --------------- DASHBOARD SIDEBAR ------------ */
-#sidebar-container {
-  min-width: 55px;
+  padding: 3rem 1rem 1rem 0;
+  grid-area: main;
 }
 
 .navigation {
-  position: fixed;
-  top: 52px;
+  /* position: fixed; */
   left: 0;
-  bottom: 66px;
-  width: 140px;
-  border-radius: 10px;
+  bottom: 66px; */
+  position: relative;
+  width: 95%;
+  height: 100%;
   box-sizing: initial;
   border-left: 5px solid var(--color-secondary);
   background: var(--color-secondary);
   transition: width 0.5s;
   overflow-x: hidden;
 }
+
 .navigation.active {
   width: 45px;
 }
+
 .navigation ul {
-  position: absolute;
+  position: relative;
   top: 1rem;
   left: 0;
   width: 100%;
@@ -128,6 +118,7 @@ body {
 .navigation ul li.active b:nth-child(2) {
   display: block;
 }
+
 .navigation ul li a {
   position: relative;
   display: block;
@@ -135,7 +126,6 @@ body {
   display: flex;
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.9rem;
   color: #fff;
 }
 .navigation ul li.active a {
@@ -147,6 +137,7 @@ body {
   min-width: 35px;
   line-height: 60px;
   text-align: center;
+  font-size: 1rem;
 }
 
 .navigation ul li a .title {
@@ -154,10 +145,11 @@ body {
   display: block;
   padding-left: 0.5rem;
   line-height: 60px;
+  /* 18px => 1rem => {(18/1500)*100} */
+  font-size: calc(0.4rem + 0.66667vw );
 }
 
 .toggle {
-  /*position: fixed;*/
   top: 60px;
   left: 30px;
   width: 50px;
@@ -166,7 +158,6 @@ body {
   color: white;
   border-radius: 10px;
   cursor: pointer;
-  /*display: flex;*/
   justify-content: center;
   align-items: center;
 }
@@ -198,6 +189,43 @@ body {
 .toggle.active i.open {
   display: none;
 }
+
+/* --------------- DASHBOARD MAIN PAGE ------------ */
+.gradient {
+  background: #00bf8f;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #44c3c5, #38a3a5,  #1a3040);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #44c3c5, #38a3a5, #1a3040); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.user-background {
+    height: 120px;
+}
+.circle {
+  position: relative;
+  margin-top: -5rem;
+  margin-left: 17%;
+  background-color: white;
+  width: 65%;
+  height: auto;
+  border-radius: 50%;
+  border: 8px solid var(--color-body);
+  overflow: hidden;
+}
+
+.list-group-container {
+  margin-top: -5rem;
+  padding-top: 5rem;
+  overflow: hidden;
+}
+
+.list-group-item {
+  font-size: 0.9rem;
+}
+
+.white h1 {
+  font-family: sans-serif;
+}
+
 /* --------------- CHARTS ------------------ */
 
 .user-icon {
@@ -249,12 +277,8 @@ canvas {
   z-index: 100;
 }
 
-.hidden {
-  display: none;
-}
-
 .reg-form {
-  width: 90%;
+  width: 100%;
   border-radius: 10px;
   padding: 1rem 10%;
 }
@@ -292,6 +316,19 @@ box-shadow: inset 0 1px 0 #a5a5a5, 0 1px 1px  #1a3040;
   margin-right: auto;
 }
 
+/* ----------------- CUSTOMERS PAGE --------------------- */
+
+.short-form-container {
+  width: 100%;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+.short-form-container form {
+  width: 100%;
+  max-width: 550px;
+  margin: auto;
+}
+
 /* -------------------------------------- */
 
  @media screen and (max-width: 1025px) {
@@ -311,7 +348,7 @@ box-shadow: inset 0 1px 0 #a5a5a5, 0 1px 1px  #1a3040;
       }
   }
 
- @media screen and (max-width: 768px) {
+ @media screen and (max-width: 610px) {
    .navigation {
        width: 45px;
    }
