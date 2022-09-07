@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 // require model database
 const Supplier = require('../models/supplier');
 const Customer = require('../models/customer');
-const User = require('../models/user')
 
 mongoose.connect('mongodb://0.0.0.0:27017/crm', {
     useNewUrlParser: true

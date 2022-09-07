@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
+const Product = require('./products');
 
 const supplierSchema = new Schema({
   name: {

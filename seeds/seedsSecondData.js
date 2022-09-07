@@ -71,7 +71,7 @@ const seedProducts = [{
     supplier: '63021933bee5ac67250b24de'
   },
   {
-    name: 'Peru El Palto',
+    name: 'India Kaapi Royal',
     intensity: 'Dark Roasting',
     weight: '1000g',
     itemCost: 26,
@@ -81,7 +81,7 @@ const seedProducts = [{
     supplier: '63021933bee5ac67250b24de'
   },
   {
-    name: 'Ethiopia Yirgacheffe',
+    name: 'Coffeein Italy',
     intensity: 'Dark Roasting',
     weight: '1000g',
     itemCost: 29,
@@ -91,7 +91,7 @@ const seedProducts = [{
     supplier: '63021933bee5ac67250b24de'
   },
   {
-    name: 'Ethiopia Alemu Werera',
+    name: 'Coffeein forte',
     intensity: 'Dark Roasting',
     weight: '1000g',
     itemCost: 29,
@@ -157,10 +157,10 @@ const addNewProducts = async () => {
     'supplier': '6300084bf1fb2a44558b4695'
   });
   const productsSupplier2 = await Product.find({
-    'supplier': '6300084bf1fb2a44558b4695'
+    'supplier': '63021933bee5ac67250b24de'
   });
   const productsSupplier3 = await Product.find({
-    'supplier': '6300084bf1fb2a44558b4695'
+    'supplier': '63000860f1fb2a44558b4698'
   });
   // console.log('testing', newProducts);
   updateSupplier1(productsSupplier1);

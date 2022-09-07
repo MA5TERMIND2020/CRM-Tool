@@ -16,10 +16,10 @@
     <thead class="table-light">
       <tr>
         <th scope="col"></th>
-         <th scope="col"><h5>Company Name</h5></th>
-         <th scope="col"><h5>Phone Number</h5></th>
-         <th scope="col"><h5>Email Address</h5></th>
-         <th scope="col"><h5>Address</h5></th>
+         <th scope="col">Company Name</th>
+         <th scope="col">Phone Number</th>
+         <th scope="col">Email Address</th>
+         <th scope="col">Address</th>
          <th scope="col"></th>
        </tr>
      </thead>
@@ -36,9 +36,9 @@
         <td><%= supplier.email %></td>
         <td><%= supplier.address %></td>
         <td>
-          <form class="" action="/dashboard/suppliers/<%= supplier._id %>?_method=DELETE" method="post">
-          <button class="btn btn-danger btn-sm deleteBtn">Delete</button>
-         </form>
+          <form id="delete-supplier" action="/dashboard/suppliers/<%= supplier._id %>?_method=DELETE" method="post">
+          <button><i class="fa-solid fa-rectangle-xmark"></i></button>
+         </form
       </td>
       </tr>
       <% } %>
