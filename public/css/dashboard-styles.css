@@ -1,47 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
-
-/* Reset  */
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-}
-
-*:focus {
-  outline: 0 !important;
-}
-
-/*********************************************** Utility Components  *************************************************/
-:root {
-  /* Colors */
-  --color-primary: #284b63;
-  --color-secondary: #38a3a5;
-  --color-secondary-d: #3c6e71;
-  --color-body: #ececec;
-  --color-input: #F5FFFA;
-  /* d9d9d9 */
-  --color-font: #353535;
-
-  /* box shadow */
-  --box-shadow: 3px 3px 10px 3px grey;
-  --box-shadow-small: 1px 1px 5px 1px grey;
-}
-
 body {
-  color: var(--color-font);
-  font-family: 'Alegreya Sans', sans-serif;
-  font-size: 20px;
-  min-height: 100vh;
-  background: var(--color-body);
-}
-
-.primary-color {
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--color-body);
 }
 
 .white {
@@ -54,43 +12,7 @@ body {
   max-height: auto;
 }
 
-.nav-link {
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-size: 1.2rem;
-}
-
-label {
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--color-secondary-d);
-}
-
-/* --------------- DASHBOARD NAVBAR------------ */
-
-.nav-item {
-  margin: 0 1rem;
-}
-
-i {
-  font-size: 1.2rem;
-}
-
-.nav-item button {
-  border: none;
-  width: 32px;
-  height: 32px;
-  background-color: transparent;
-  transition: all ease-in-out 0.2s;
-  cursor: pointer;
-}
-
-.nav-item button:hover{
-  background-color: transparent;
-  color: white;
-}
-
-/* --------------- DASHBOARD Results PAGE ------------ */
+/* --------------- DASHBOARD MAIN PAGE ------------ */
 .gradient {
   background: #00bf8f;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #44c3c5, #38a3a5,  #1a3040);  /* Chrome 10-25, Safari 5.1-6 */
@@ -121,38 +43,10 @@ i {
 .list-group {
   border: none; !important
 }
-.date,
-.hi-user {
-  margin-top: 0.5rem;
-   /* 3.3rem; */
-}
-
-.date {
-  margin-right: 14.688rem;
-}
 
 .dashboard-main {
   background-color: var(--color-body);
   padding: 3rem 1rem 1rem 3rem;
-}
-.left {
-  width: 25%;
-}
-
-.right {
-  width: 73%;
-  height: auto;
-}
-
-.stocks-box {
-  text-align: center;
-}
-
-.box-item {
-  background-color: #fcfcfc;
-  box-shadow: var(--box-shadow-small);
-  border-radius: 3px;
-  margin-right: 1rem;
 }
 
 /* --------------- DASHBOARD SIDEBAR ------------ */
@@ -241,7 +135,7 @@ i {
   display: flex;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #fff;
 }
 .navigation ul li.active a {
@@ -258,7 +152,7 @@ i {
 .navigation ul li a .title {
   position: relative;
   display: block;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
   line-height: 60px;
 }
 
@@ -304,9 +198,7 @@ i {
 .toggle.active i.open {
   display: none;
 }
-/* ---------------charts ------------------ */
-
-/* --------------- DASHBOARD MAIN PAGE ---------------*/
+/* --------------- CHARTS ------------------ */
 
 .user-icon {
   width: 35px;
@@ -335,6 +227,20 @@ canvas {
   width: 200;
   height: 200;
   padding: 1rem 0 1rem;
+}
+/* --------------- SUPPLIERS PAGE ---------------*/
+#delete-supplier button {
+  text-decoration: none;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+#delete-supplier button i {
+  background-color: transparent;
+  color: #dc3545;
+  font-size: 1.6rem;
+  margin: 0;
 }
 
 /* --------------- PRODUCTS PAGE ---------------*/
