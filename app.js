@@ -19,6 +19,7 @@ const productRoutes = require('./routes/products');
 const supplierRoutes = require('./routes/supplier');
 const customerRoutes = require('./routes/customer');
 
+mongoose.set('strictQuery', false);
 mongoose.connect('mongodb://0.0.0.0:27017/crm', {
   useNewUrlParser: true,
   useUnifiedTopology: true
