@@ -10,7 +10,7 @@ CRM Tool is a customizable web app designed to provide users with a reliable and
     Be sure to select the "On-Premises MongoDB Locally" button near the top of the page and select the correct operating system for your machine.
 3) Download Node.js by fllowing this link => https://nodejs.org/en/download/
     Be sure to select the correct operating system for your machine.
-4) Open your CLI, navigate to the CRM-Tool directory you downloaded in step 1, and type this command to run the script=> npm run start
+4) Open your CLI, navigate to the CRM-Tool directory you downloaded in step 1, and type npm install to install dependencies then type npm run start.
 5) Now to run the seeds to get the dummy data, in your CLI, ctrl+C, type 'cd seeds'
 6) Type 'node seedsFirstData.js' - must do this first before running the other seeds script.
 7) Ctrl+C, type 'seedsSecondData.js' - this file will depend on seedsFirstData so be sure to run it first.
